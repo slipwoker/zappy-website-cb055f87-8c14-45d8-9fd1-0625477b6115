@@ -2716,7 +2716,6 @@ html[dir="rtl"] .site-footer .footer-col:nth-child(3) .footer-contact li {
 html[dir="rtl"] .footer-contact .contact-icon { order: 0 !important; }
 html[dir="rtl"] .footer-contact .contact-text { order: 1 !important; }
 html[dir="rtl"] .footer-contact li > a { flex-direction: row !important; }
-/* index-hero */
 .index-hero-section {
   position: relative;
   width: 100%;
@@ -2724,7 +2723,7 @@ html[dir="rtl"] .footer-contact li > a { flex-direction: row !important; }
   display: flex;
   align-items: center;
   overflow: visible;
-  background-color: #090B12;
+  background-color: #1A1F2E;
   color: var(--text-light);
   padding-bottom: 90px;
   direction: rtl;
@@ -2748,23 +2747,12 @@ html[dir="rtl"] .footer-contact li > a { flex-direction: row !important; }
   filter: brightness(0.72) saturate(0.85);
 }
 
-/* ── Scrim Overlay ── */
 .index-hero-section .index-hero-scrim {
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background-image:
-    linear-gradient(90deg,
-      rgba(5, 7, 12, 0.93) 0%,
-      rgba(9, 11, 18, 0.78) 42%,
-      rgba(9, 11, 18, 0.12) 100%
-    ),
-    linear-gradient(180deg,
-      rgba(9, 11, 18, 0.28) 0%,
-      rgba(9, 11, 18, 0.0) 40%,
-      rgba(9, 11, 18, 0.55) 100%
-    );
+  background-image: linear-gradient(90deg, rgba(15, 20, 35, 0.82) 0%, rgba(20, 26, 45, 0.60) 42%, rgba(20, 26, 45, 0.08) 100%), linear-gradient(180deg, rgba(20, 26, 45, 0.18) 0%, rgba(20, 26, 45, 0.0) 40%, rgba(20, 26, 45, 0.40) 100%);
 }
 
 /* ── Grid Texture ── */
