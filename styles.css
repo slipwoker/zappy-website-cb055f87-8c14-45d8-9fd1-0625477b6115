@@ -13607,6 +13607,10 @@ body.accessibility-widget-visible ._access-menu {
 .nav-cta-btn { color: #333333 !important; }
 /* === BUTTON TEXT OVERRIDES END === */
 
+
+.index-booking-section .index-booking-section__img-caption {
+  display: none !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
