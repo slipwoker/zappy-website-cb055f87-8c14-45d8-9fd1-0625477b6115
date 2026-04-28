@@ -13610,6 +13610,40 @@ body.accessibility-widget-visible ._access-menu {
 .index-booking-section .index-booking-section__img-caption {
   display: none !important;
 }
+
+.index-services-section .index-services-section__card-bg-img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  border-radius: 12px !important;
+  z-index: 0 !important;
+  opacity: 0.45 !important;
+  transition: opacity 0.3s ease !important;
+}
+
+.index-services-section .index-services-section__card:hover .index-services-section__card-bg-img {
+  opacity: 0.55 !important;
+}
+
+.index-services-section .index-services-section__card-bg-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(160deg, rgba(9,11,18,0.72) 0%, rgba(9,11,18,0.88) 100%) !important;
+  border-radius: 12px !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+.index-services-section .index-services-section__card-glow {
+  z-index: 2 !important;
+}
+
+.index-services-section .index-services-section__card-inner {
+  z-index: 3 !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
