@@ -13780,6 +13780,51 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Cinzel', sans-serif; font-weight: 700; }
 #index-hero-section h2 {
   font-family: 'Handjet', sans-serif !important;
 }
+
+.index-services-section .index-services-section__card-bg-img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  opacity: 0 !important;
+  filter: none !important;
+  transition: opacity 0.4s ease !important;
+  z-index: 2 !important;
+  border-radius: 12px !important;
+}
+
+.index-services-section .index-services-section__card-bg-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 3 !important;
+  opacity: 0 !important;
+  transition: opacity 0.4s ease !important;
+  border-radius: 12px !important;
+}
+
+.index-services-section .index-services-section__card-inner {
+  transition: opacity 0.35s ease !important;
+  z-index: 4 !important;
+}
+
+.index-services-section .index-services-section__card-glow {
+  z-index: 5 !important;
+  transition: opacity 0.35s ease !important;
+}
+
+.index-services-section .index-services-section__card:hover .index-services-section__card-bg-img {
+  opacity: 1 !important;
+}
+
+.index-services-section .index-services-section__card:hover .index-services-section__card-inner {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.index-services-section .index-services-section__card:hover .index-services-section__card-glow {
+  opacity: 0 !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
