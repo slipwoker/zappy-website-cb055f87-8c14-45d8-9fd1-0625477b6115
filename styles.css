@@ -13855,6 +13855,17 @@ html, body {
   position: relative !important;
   z-index: 11 !important;
 }
+
+.site-footer #zappy-element-1777393770289-i293j30iq[data-zappy-media-cell="true"] {
+  height: 144px !important;
+  width: 144px !important;
+  min-height: 144px !important;
+}
+
+.site-footer #zappy-element-1777393770289-i293j30iq[data-zappy-media-cell="true"] [data-zappy-zoom-wrapper="true"] {
+  height: 144px !important;
+  width: 144px !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
