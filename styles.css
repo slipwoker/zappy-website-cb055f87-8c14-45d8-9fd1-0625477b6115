@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700;900&display=swap');
+
 
 
 /* Self-hosted fonts (Inter + Rubik for multi-language support) */
@@ -13643,6 +13647,14 @@ body.accessibility-widget-visible ._access-menu {
 
 .index-services-section .index-services-section__card-inner {
   z-index: 3 !important;
+}
+
+.index-hero-section h1, .index-hero-section h2 {
+  font-family: 'Frank Ruhl Libre', serif !important;
+}
+
+.index-hero-section h1, .index-hero-section h2 {
+  font-family: 'Frank Ruhl Libre', serif !important;
 }
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
