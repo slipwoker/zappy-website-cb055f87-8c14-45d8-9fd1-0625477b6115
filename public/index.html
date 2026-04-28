@@ -1690,7 +1690,7 @@
           </div>
 
           <!-- Confirm strip (shown after time selection) -->
-          <div id="zappy-confirm-strip" style="display:none;margin-top:16px;background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.3);border-radius:10px;padding:14px 16px;display:none;flex-direction:column;gap:12px;">
+          <div id="zappy-confirm-strip" style="display:none;margin-top:16px;background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.3);border-radius:10px;padding:14px 16px;flex-direction:column;gap:12px;">
             <div style="display:flex;align-items:center;gap:8px;color:#F5F3EE;font-size:0.875rem;font-weight:600;">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00D4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
               <span id="zappy-confirm-text"></span>
@@ -1699,6 +1699,205 @@
               קבע פגישה ✓
             </a>
           </div>
+
+          <script>
+          (function() {
+            var AVAILABLE_TIMES = ['09:00','10:00','11:00','12:00','14:00','15:00','16:00','17:00'];
+            var UNAVAILABLE_DAYS = [5, 6]; // Friday=5, Saturday=6
+            var selectedDate = null;
+            var selectedTime = null;
+            var currentYear, currentMonth;
+
+            var heMonths = ['ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר'];
+            var hedays = ['א׳','ב׳','ג׳','ד׳','ה׳','ו׳','ש׳'];
+
+            function renderCalendar(year, month) {
+              currentYear = year;
+              currentMonth = month;
+              var calEl = document.getElementById('zappy-interactive-cal');
+              var monthLabel = document.querySelector('.index-booking-section__cal-month');
+              if (monthLabel) monthLabel.textContent = heMonths[month] + ' ' + year;
+
+              calEl.innerHTML = '';
+              var today = new Date();
+              today.setHours(0,0,0,0);
+
+              var firstDay = new Date(year, month, 1).getDay(); // 0=Sun
+              // In RTL Hebrew calendar starting Sunday
+              var daysInMonth = new Date(year, month + 1, 0).getDate();
+
+              // Empty cells before first day
+              for (var i = 0; i < firstDay; i++) {
+                var empty = document.createElement('div');
+                empty.style.cssText = 'height:32px;';
+                calEl.appendChild(empty);
+              }
+
+              for (var d = 1; d <= daysInMonth; d++) {
+                var date = new Date(year, month, d);
+                var dow = date.getDay();
+                var isPast = date < today;
+                var isUnavail = UNAVAILABLE_DAYS.indexOf(dow) !== -1;
+                var isDisabled = isPast || isUnavail;
+                var isToday = date.getTime() === today.getTime();
+
+                var cell = document.createElement('div');
+                cell.textContent = d;
+                cell.setAttribute('data-date', year + '-' + (month+1) + '-' + d);
+
+                var base = 'display:flex;align-items:center;justify-content:center;height:32px;border-radius:6px;font-size:0.82rem;font-weight:600;cursor:pointer;transition:all 0.18s;user-select:none;';
+
+                if (isDisabled) {
+                  cell.style.cssText = base + 'color:#3a3f52;cursor:default;';
+                } else if (isToday) {
+                  cell.style.cssText = base + 'color:#00D4FF;border:1px solid rgba(0,212,255,0.5);background:rgba(0,212,255,0.06);';
+                } else {
+                  cell.style.cssText = base + 'color:#F5F3EE;background:rgba(255,255,255,0.04);';
+                  cell.addEventListener('mouseenter', function() {
+                    if (!this.classList.contains('zappy-cal-selected')) {
+                      this.style.background = 'rgba(0,212,255,0.15)';
+                      this.style.color = '#00D4FF';
+                    }
+                  });
+                  cell.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('zappy-cal-selected')) {
+                      this.style.background = 'rgba(255,255,255,0.04)';
+                      this.style.color = '#F5F3EE';
+                    }
+                  });
+                  cell.addEventListener('click', function() {
+                    onDateClick(this);
+                  });
+                }
+
+                calEl.appendChild(cell);
+              }
+
+              // Restore selected date highlight if still in this month
+              if (selectedDate) {
+                var cells = calEl.querySelectorAll('[data-date]');
+                cells.forEach(function(c) {
+                  if (c.getAttribute('data-date') === selectedDate) {
+                    applySelectedStyle(c);
+                  }
+                });
+              }
+            }
+
+            function applySelectedStyle(cell) {
+              cell.classList.add('zappy-cal-selected');
+              cell.style.cssText = 'display:flex;align-items:center;justify-content:center;height:32px;border-radius:6px;font-size:0.82rem;font-weight:700;cursor:pointer;transition:all 0.18s;user-select:none;background:linear-gradient(135deg,#00C3EA,#00D4FF);color:#050A0F;box-shadow:0 0 14px rgba(0,212,255,0.5);';
+            }
+
+            function clearSelectedStyle(cell) {
+              cell.classList.remove('zappy-cal-selected');
+              cell.style.cssText = 'display:flex;align-items:center;justify-content:center;height:32px;border-radius:6px;font-size:0.82rem;font-weight:600;cursor:pointer;transition:all 0.18s;user-select:none;background:rgba(255,255,255,0.04);color:#F5F3EE;';
+            }
+
+            function onDateClick(cell) {
+              // Deselect previous
+              var prev = document.querySelector('#zappy-interactive-cal .zappy-cal-selected');
+              if (prev) clearSelectedStyle(prev);
+
+              selectedDate = cell.getAttribute('data-date');
+              selectedTime = null;
+              applySelectedStyle(cell);
+
+              // Build label
+              var parts = selectedDate.split('-');
+              var d = new Date(parseInt(parts[0]), parseInt(parts[1])-1, parseInt(parts[2]));
+              var label = document.getElementById('zappy-timeslots-label');
+              label.textContent = 'שעות פנויות ל-' + d.getDate() + ' ב' + heMonths[d.getMonth()];
+
+              renderTimeSlots();
+              document.getElementById('zappy-timeslots-wrapper').style.display = 'block';
+              document.getElementById('zappy-confirm-strip').style.display = 'none';
+            }
+
+            function renderTimeSlots() {
+              var grid = document.getElementById('zappy-timeslots-grid');
+              grid.innerHTML = '';
+              AVAILABLE_TIMES.forEach(function(t) {
+                var btn = document.createElement('div');
+                btn.textContent = t;
+                btn.setAttribute('data-time', t);
+                btn.style.cssText = 'display:flex;align-items:center;justify-content:center;padding:8px 4px;border-radius:7px;font-size:0.8rem;font-weight:700;cursor:pointer;border:1px solid rgba(0,212,255,0.25);color:#F5F3EE;background:rgba(255,255,255,0.04);transition:all 0.18s;user-select:none;';
+                btn.addEventListener('mouseenter', function() {
+                  if (!this.classList.contains('zappy-time-selected')) {
+                    this.style.background = 'rgba(244,197,66,0.15)';
+                    this.style.borderColor = 'rgba(244,197,66,0.6)';
+                    this.style.color = '#F4C542';
+                  }
+                });
+                btn.addEventListener('mouseleave', function() {
+                  if (!this.classList.contains('zappy-time-selected')) {
+                    this.style.background = 'rgba(255,255,255,0.04)';
+                    this.style.borderColor = 'rgba(0,212,255,0.25)';
+                    this.style.color = '#F5F3EE';
+                  }
+                });
+                btn.addEventListener('click', function() {
+                  onTimeClick(this);
+                });
+                grid.appendChild(btn);
+              });
+            }
+
+            function onTimeClick(btn) {
+              var prev = document.querySelector('#zappy-timeslots-grid .zappy-time-selected');
+              if (prev) {
+                prev.classList.remove('zappy-time-selected');
+                prev.style.cssText = 'display:flex;align-items:center;justify-content:center;padding:8px 4px;border-radius:7px;font-size:0.8rem;font-weight:700;cursor:pointer;border:1px solid rgba(0,212,255,0.25);color:#F5F3EE;background:rgba(255,255,255,0.04);transition:all 0.18s;user-select:none;';
+              }
+              selectedTime = btn.getAttribute('data-time');
+              btn.classList.add('zappy-time-selected');
+              btn.style.cssText = 'display:flex;align-items:center;justify-content:center;padding:8px 4px;border-radius:7px;font-size:0.8rem;font-weight:800;cursor:pointer;border:1px solid #F4C542;color:#18120A;background:linear-gradient(135deg,#F1B716,#F5CB57);box-shadow:0 0 14px rgba(244,197,66,0.45);transition:all 0.18s;user-select:none;';
+
+              // Show confirm strip
+              var parts = selectedDate.split('-');
+              var d = new Date(parseInt(parts[0]), parseInt(parts[1])-1, parseInt(parts[2]));
+              var confirmText = document.getElementById('zappy-confirm-text');
+              confirmText.textContent = d.getDate() + ' ב' + heMonths[d.getMonth()] + ' בשעה ' + selectedTime;
+
+              var confirmBtn = document.getElementById('zappy-confirm-btn');
+              confirmBtn.href = '/book?date=' + selectedDate + '&time=' + selectedTime.replace(':','');
+
+              var strip = document.getElementById('zappy-confirm-strip');
+              strip.style.display = 'flex';
+            }
+
+            // Nav buttons
+            function initNav() {
+              var btns = document.querySelectorAll('.index-booking-section__cal-nav-btn');
+              if (btns.length >= 2) {
+                btns[0].addEventListener('click', function() {
+                  // "Previous" button (right arrow in RTL = prev month)
+                  currentMonth--;
+                  if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+                  renderCalendar(currentYear, currentMonth);
+                });
+                btns[1].addEventListener('click', function() {
+                  // "Next" button
+                  currentMonth++;
+                  if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+                  renderCalendar(currentYear, currentMonth);
+                });
+              }
+            }
+
+            function init() {
+              var now = new Date();
+              renderCalendar(now.getFullYear(), now.getMonth());
+              initNav();
+            }
+
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', init);
+            } else {
+              init();
+            }
+          })();
+          </script>
         </div>
 
 
