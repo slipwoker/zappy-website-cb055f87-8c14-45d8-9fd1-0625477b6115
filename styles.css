@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700;900&display=swap');
@@ -13715,6 +13717,15 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Heebo', sans-serif; font-weight: 700; }
 
 body {
   font-family: 'Heebo', sans-serif;
+}
+
+:root {
+  --font-heading: 'Assistant', sans-serif;
+  --font-body: 'Assistant', sans-serif;
+}
+
+body {
+  font-family: 'Assistant', sans-serif;
 }
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
