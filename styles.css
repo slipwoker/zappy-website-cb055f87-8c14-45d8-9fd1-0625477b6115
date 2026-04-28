@@ -13825,6 +13825,36 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Cinzel', sans-serif; font-weight: 700; }
 .index-services-section .index-services-section__card:hover .index-services-section__card-glow {
   opacity: 0 !important;
 }
+
+html, body {
+  scroll-behavior: smooth !important;
+}
+
+.index-services-section .index-services-section__card {
+  position: relative !important;
+  cursor: pointer !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.index-services-section .index-services-section__card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 24px 48px rgba(0, 212, 255, 0.18) !important;
+}
+
+.index-services-section .index-services-section__card-link {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 10 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  border-radius: inherit !important;
+}
+
+.index-services-section .index-services-section__card .index-services-section__card-inner {
+  position: relative !important;
+  z-index: 11 !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
