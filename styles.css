@@ -13682,6 +13682,12 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Cinzel', sans-serif; font-weight: 600; }
 body { font-family: 'Raleway', sans-serif; font-weight: 400; }
 h1, h2, h3, h4, h5, h6 { font-family: 'Cormorant Garamond', sans-serif; font-weight: 700; }
 
+/* Font pairing applied */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@700&family=Raleway:wght@400&display=swap');
+:root { --font-heading: 'Noto Serif Hebrew', sans-serif; --font-body: 'Raleway', sans-serif; }
+body { font-family: 'Raleway', sans-serif; font-weight: 400; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Noto Serif Hebrew', sans-serif; font-weight: 700; }
+
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
