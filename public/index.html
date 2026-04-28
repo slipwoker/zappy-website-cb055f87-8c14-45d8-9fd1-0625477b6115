@@ -1773,7 +1773,11 @@
               b.style.cssText = 'display:flex;align-items:center;justify-content:center;padding:8px 4px;border-radius:7px;font-size:0.8rem;font-weight:800;cursor:pointer;border:1px solid #F4C542;color:#18120A;background:linear-gradient(135deg,#F1B716,#F5CB57);box-shadow:0 0 14px rgba(244,197,66,0.45);transition:all 0.18s;user-select:none;';
               var p = selDate.split('-'); var dd = new Date(+p[0],+p[1]-1,+p[2]);
               document.getElementById('zappy-confirm-text').textContent = dd.getDate()+' ב'+HE[dd.getMonth()]+' בשעה '+selTime;
-              document.getElementById('zappy-confirm-btn').href = '/book?date='+selDate+'&time='+selTime.replace(':','');
+              var _parts = selDate.split('-');
+              var _d = new Date(parseInt(_parts[0]), parseInt(_parts[1])-1, parseInt(_parts[2]));
+              var _HE = ['ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר'];
+              var _waMsg = encodeURIComponent('שלום, אני מעוניין/ת לקבוע פגישת ייעוץ בתאריך ' + _d.getDate() + ' ב' + _HE[_d.getMonth()] + ' ' + _parts[0] + ' בשעה ' + selTime + '. אשמח לאישור. תודה!');
+              document.getElementById('zappy-confirm-btn').href = 'https://wa.me/message/QIBV72ERMUJYC1?text=' + _waMsg;
               var s = document.getElementById('zappy-confirm-strip'); s.style.display='flex';
             }
 
@@ -1973,7 +1977,8 @@
               confirmText.textContent = d.getDate() + ' ב' + heMonths[d.getMonth()] + ' בשעה ' + selectedTime;
 
               var confirmBtn = document.getElementById('zappy-confirm-btn');
-              confirmBtn.href = '/book?date=' + selectedDate + '&time=' + selectedTime.replace(':','');
+              var waMsg = encodeURIComponent('שלום, אני מעוניין/ת לקבוע פגישת ייעוץ בתאריך ' + d.getDate() + ' ב' + heMonths[d.getMonth()] + ' ' + parts[0] + ' בשעה ' + selectedTime + '. אשמח לאישור. תודה!');
+              confirmBtn.href = 'https://wa.me/message/QIBV72ERMUJYC1?text=' + waMsg;
 
               var strip = document.getElementById('zappy-confirm-strip');
               strip.style.display = 'flex';
