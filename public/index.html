@@ -1689,6 +1689,111 @@
             <div id="zappy-timeslots-grid" style="--zappy-grid-cols: repeat(3,1fr); display:grid;grid-template-columns:repeat(3,1fr);gap:8px;" data-zappy-explicit-columns="true"></div>
           </div>
 
+          <!-- Confirm strip -->
+          <div id="zappy-confirm-strip" style="display:none;margin-top:16px;background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.3);border-radius:10px;padding:14px 16px;flex-direction:column;gap:12px;">
+            <div style="display:flex;align-items:center;gap:8px;color:#F5F3EE;font-size:0.875rem;font-weight:600;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00D4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span id="zappy-confirm-text"></span>
+            </div>
+            <a id="zappy-confirm-btn" href="/book" style="display:block;text-align:center;background:linear-gradient(135deg,#F1B716 0%,#F5CB57 100%);color:#18120A;padding:13px 24px;border-radius:8px;font-weight:800;font-size:1rem;text-decoration:none;letter-spacing:0.03em;box-shadow:0 6px 24px rgba(244,180,58,0.4);">קבע פגישה ✓</a>
+          </div>
+
+          <script>
+          (function() {
+            var TIMES = ['09:00','10:00','11:00','12:00','14:00','15:00','16:00','17:00'];
+            var CLOSED = [5,6];
+            var selDate = null, selTime = null, curY, curM;
+            var HE = ['ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר'];
+
+            function render(y, m) {
+              curY = y; curM = m;
+              var cal = document.getElementById('zappy-interactive-cal');
+              var lbl = document.querySelector('.index-booking-section__cal-month');
+              if (lbl) lbl.textContent = HE[m] + ' ' + y;
+              cal.innerHTML = '';
+              var today = new Date(); today.setHours(0,0,0,0);
+              var first = new Date(y, m, 1).getDay();
+              var days = new Date(y, m+1, 0).getDate();
+              for (var i=0; i<first; i++) { var e=document.createElement('div'); e.style.height='32px'; cal.appendChild(e); }
+              for (var d=1; d<=days; d++) {
+                var dt = new Date(y, m, d);
+                var off = CLOSED.indexOf(dt.getDay()) !== -1 || dt < today;
+                var isTd = dt.getTime() === today.getTime();
+                var cell = document.createElement('div');
+                cell.textContent = d;
+                cell.setAttribute('data-date', y+'-'+(m+1)+'-'+d);
+                var base = 'display:flex;align-items:center;justify-content:center;height:32px;border-radius:6px;font-size:0.82rem;font-weight:600;transition:all 0.18s;user-select:none;';
+                if (off) {
+                  cell.style.cssText = base + 'color:#3a3f52;cursor:default;';
+                } else {
+                  cell.style.cssText = base + (isTd ? 'color:#00D4FF;border:1px solid rgba(0,212,255,0.5);background:rgba(0,212,255,0.06);cursor:pointer;' : 'color:#F5F3EE;background:rgba(255,255,255,0.04);cursor:pointer;');
+                  (function(c){ 
+                    c.addEventListener('mouseenter', function(){ if(!c.classList.contains('zs')){ c.style.background='rgba(0,212,255,0.15)'; c.style.color='#00D4FF'; }});
+                    c.addEventListener('mouseleave', function(){ if(!c.classList.contains('zs')){ c.style.background='rgba(255,255,255,0.04)'; c.style.color='#F5F3EE'; }});
+                    c.addEventListener('click', function(){ pickDate(c); });
+                  })(cell);
+                }
+                cal.appendChild(cell);
+              }
+              if (selDate) { var sc=cal.querySelector('[data-date="'+selDate+'"]'); if(sc) hiliteDate(sc); }
+            }
+
+            function hiliteDate(c) { c.classList.add('zs'); c.style.cssText='display:flex;align-items:center;justify-content:center;height:32px;border-radius:6px;font-size:0.82rem;font-weight:700;cursor:pointer;transition:all 0.18s;user-select:none;background:linear-gradient(135deg,#00C3EA,#00D4FF);color:#050A0F;box-shadow:0 0 14px rgba(0,212,255,0.5);'; }
+            function clearDate(c) { c.classList.remove('zs'); c.style.cssText='display:flex;align-items:center;justify-content:center;height:32px;border-radius:6px;font-size:0.82rem;font-weight:600;cursor:pointer;transition:all 0.18s;user-select:none;background:rgba(255,255,255,0.04);color:#F5F3EE;'; }
+
+            function pickDate(c) {
+              var prev = document.querySelector('#zappy-interactive-cal .zs'); if(prev) clearDate(prev);
+              selDate = c.getAttribute('data-date'); selTime = null;
+              hiliteDate(c);
+              var p = selDate.split('-'); var dd = new Date(+p[0],+p[1]-1,+p[2]);
+              document.getElementById('zappy-timeslots-label').textContent = 'שעות פנויות ל-'+dd.getDate()+' ב'+HE[dd.getMonth()];
+              renderTimes();
+              document.getElementById('zappy-timeslots-wrapper').style.display = 'block';
+              document.getElementById('zappy-confirm-strip').style.display = 'none';
+            }
+
+            function renderTimes() {
+              var g = document.getElementById('zappy-timeslots-grid'); g.innerHTML = '';
+              TIMES.forEach(function(t) {
+                var b = document.createElement('div');
+                b.textContent = t; b.setAttribute('data-time', t);
+                b.style.cssText = 'display:flex;align-items:center;justify-content:center;padding:8px 4px;border-radius:7px;font-size:0.8rem;font-weight:700;cursor:pointer;border:1px solid rgba(0,212,255,0.25);color:#F5F3EE;background:rgba(255,255,255,0.04);transition:all 0.18s;user-select:none;';
+                b.addEventListener('mouseenter', function(){ if(!b.classList.contains('zt')){ b.style.background='rgba(244,197,66,0.15)'; b.style.borderColor='rgba(244,197,66,0.6)'; b.style.color='#F4C542'; }});
+                b.addEventListener('mouseleave', function(){ if(!b.classList.contains('zt')){ b.style.background='rgba(255,255,255,0.04)'; b.style.borderColor='rgba(0,212,255,0.25)'; b.style.color='#F5F3EE'; }});
+                b.addEventListener('click', function(){ pickTime(b); });
+                g.appendChild(b);
+              });
+            }
+
+            function pickTime(b) {
+              var prev = document.querySelector('#zappy-timeslots-grid .zt');
+              if(prev){ prev.classList.remove('zt'); prev.style.cssText='display:flex;align-items:center;justify-content:center;padding:8px 4px;border-radius:7px;font-size:0.8rem;font-weight:700;cursor:pointer;border:1px solid rgba(0,212,255,0.25);color:#F5F3EE;background:rgba(255,255,255,0.04);transition:all 0.18s;user-select:none;'; }
+              selTime = b.getAttribute('data-time');
+              b.classList.add('zt');
+              b.style.cssText = 'display:flex;align-items:center;justify-content:center;padding:8px 4px;border-radius:7px;font-size:0.8rem;font-weight:800;cursor:pointer;border:1px solid #F4C542;color:#18120A;background:linear-gradient(135deg,#F1B716,#F5CB57);box-shadow:0 0 14px rgba(244,197,66,0.45);transition:all 0.18s;user-select:none;';
+              var p = selDate.split('-'); var dd = new Date(+p[0],+p[1]-1,+p[2]);
+              document.getElementById('zappy-confirm-text').textContent = dd.getDate()+' ב'+HE[dd.getMonth()]+' בשעה '+selTime;
+              document.getElementById('zappy-confirm-btn').href = '/book?date='+selDate+'&time='+selTime.replace(':','');
+              var s = document.getElementById('zappy-confirm-strip'); s.style.display='flex';
+            }
+
+            function initNav() {
+              var btns = document.querySelectorAll('.index-booking-section__cal-nav-btn');
+              if(btns[0]) btns[0].addEventListener('click', function(){ curM--; if(curM<0){curM=11;curY--;} render(curY,curM); });
+              if(btns[1]) btns[1].addEventListener('click', function(){ curM++; if(curM>11){curM=0;curY++;} render(curY,curM); });
+            }
+
+            function init() { var n=new Date(); render(n.getFullYear(),n.getMonth()); initNav(); }
+            if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded',init); } else { init(); }
+          })();
+          </script>
+
+          <!-- Time slots (shown after date selection) -->
+          <div id="zappy-timeslots-wrapper" style="display:none;margin-top:16px;">
+            <p id="zappy-timeslots-label" style="font-size:0.8rem;font-weight:700;color:#00D4FF;margin:0 0 10px 0;"></p>
+            <div id="zappy-timeslots-grid" style="--zappy-grid-cols: repeat(3,1fr); display:grid;grid-template-columns:repeat(3,1fr);gap:8px;" data-zappy-explicit-columns="true"></div>
+          </div>
+
           <!-- Confirm strip (shown after time selection) -->
           <div id="zappy-confirm-strip" style="display:none;margin-top:16px;background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.3);border-radius:10px;padding:14px 16px;flex-direction:column;gap:12px;">
             <div style="display:flex;align-items:center;gap:8px;color:#F5F3EE;font-size:0.875rem;font-weight:600;">
