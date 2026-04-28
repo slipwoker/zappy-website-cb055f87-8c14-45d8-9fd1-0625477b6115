@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@400;500;600;700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@400;500;600;700&display=swap');
@@ -13769,6 +13771,14 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Cinzel', sans-serif; font-weight: 700; }
 .index-hero-section .index-hero-trust,
 .index-hero-section .index-hero-scroll-cue span {
   font-family: 'Raleway', sans-serif !important;
+}
+
+#index-hero-section [data-element-id="move-1777365736682-6r0byvw8"] {
+  font-family: 'Handjet', sans-serif !important;
+}
+
+#index-hero-section h2 {
+  font-family: 'Handjet', sans-serif !important;
 }
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
