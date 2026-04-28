@@ -1834,13 +1834,28 @@
     var cards = document.querySelectorAll('.index-services-section__card');
     cards.forEach(function(card) {
       card.style.cursor = 'pointer';
+
+      // Add overlay anchor if not already present
+      if (!card.querySelector('.index-services-section__card-link')) {
+        var overlay = document.createElement('a');
+        overlay.href = '#zappy-section-3';
+        overlay.className = 'index-services-section__card-link';
+        overlay.setAttribute('aria-label', 'קביעת פגישת ייעוץ');
+        overlay.style.cssText = 'display:block;position:absolute;inset:0;z-index:1;text-decoration:none;cursor:pointer;';
+        overlay.addEventListener('click', function(e) {
+          e.preventDefault();
+          var target = document.getElementById('zappy-section-3');
+          if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+        card.style.position = 'relative';
+        card.insertBefore(overlay, card.firstChild);
+      }
+
+      // Also handle direct card clicks (areas not covered by inner links)
       card.addEventListener('click', function(e) {
-        // Allow inner CTA links to navigate normally
-        if (e.target.closest('a')) return;
+        if (e.target.closest('a') && !e.target.closest('.index-services-section__card-link')) return;
         var target = document.getElementById('zappy-section-3');
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
       });
     });
   }
