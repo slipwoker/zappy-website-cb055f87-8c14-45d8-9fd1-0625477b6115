@@ -14113,6 +14113,89 @@ nav.navbar .sub-menu li a {
 .nav-cta-btn { color: #FFFFFF !important; }
 /* === BUTTON TEXT OVERRIDES END === */
 
+
+body {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+}
+
+.index-hero-section .zappy-section-video-bg > div {
+  background: rgba(255,255,255,0.15) !important;
+}
+
+.index-services-section {
+  background-color: #EEF1F7 !important;
+  background-image: linear-gradient(rgba(26,107,204,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,107,204,0.05) 1px, transparent 1px),
+    radial-gradient(circle at 15% 25%, rgba(26,107,204,0.07) 0%, transparent 40%),
+    radial-gradient(circle at 85% 70%, rgba(74,42,158,0.07) 0%, transparent 40%) !important;
+  background-size: 48px 48px, 48px 48px, auto, auto !important;
+  color: var(--text-color) !important;
+}
+
+.index-services-section p {
+  color: #3A4055 !important;
+}
+
+.index-reviews-section {
+  background-color: #F0F3F9 !important;
+  background-image: linear-gradient(rgba(26,107,204,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,107,204,0.05) 1px, transparent 1px) !important;
+  background-size: 48px 48px !important;
+  color: var(--text-color) !important;
+}
+
+.index-booking-section {
+  background-color: #E8ECF4 !important;
+  background-image: linear-gradient(rgba(26,107,204,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,107,204,0.06) 1px, transparent 1px),
+    radial-gradient(circle at 15% 25%, rgba(26,107,204,0.08) 0%, transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(74,42,158,0.08) 0%, transparent 40%) !important;
+  background-size: 48px 48px, 48px 48px, auto, auto !important;
+  color: var(--text-color) !important;
+}
+
+#zappy-direct-mail-consent label {
+  color: var(--text-secondary-color) !important;
+}
+
+.navbar {
+  background: var(--surface-color) !important;
+  box-shadow: 0 2px 16px rgba(26,107,204,0.10) !important;
+}
+
+.nav-menu a {
+  color: var(--text-color) !important;
+}
+
+.nav-menu a:hover {
+  color: var(--primary-color) !important;
+}
+
+.site-footer {
+  background-color: #D8DDE8 !important;
+  color: var(--text-color) !important;
+}
+
+.site-footer, .site-footer p, .site-footer span, .site-footer li, .site-footer a, .site-footer h1, .site-footer h2, .site-footer h3, .site-footer h4, .site-footer h5, .site-footer h6 {
+  color: var(--text-color) !important;
+}
+
+.site-footer a:hover {
+  color: var(--primary-color) !important;
+}
+
+.footer-divider {
+  background: rgba(26,107,204,0.2) !important;
+}
+
+.nav-menu > li > a {
+  color: var(--text-color) !important;
+}
+
+.nav-menu > .nav-item > a {
+  color: var(--text-color) !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
