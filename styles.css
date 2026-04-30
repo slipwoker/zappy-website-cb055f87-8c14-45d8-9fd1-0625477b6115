@@ -3463,19 +3463,12 @@ html[dir="rtl"] .footer-contact li > a { flex-direction: row !important; }
     height: 60px;
   }
 }
-/* ZAPPY_POSTGEN_GUARD_RTL_ORDER:בית-story — stripped 1 order declaration(s) conflicting with RTL grid */
-
-
-/* index-services */
 .index-services-section {
   position: relative;
   overflow: visible;
-  background-color: #090B12;
-  background-image:
-    radial-gradient(circle at 15% 25%, rgba(0, 212, 255, 0.10) 0%, transparent 40%),
-    radial-gradient(circle at 85% 70%, rgba(124, 58, 237, 0.10) 0%, transparent 40%),
-    linear-gradient(180deg, #0B0E16 0%, #090B12 100%);
-  color: var(--text-light);
+  background-color: #FFFFFF;
+  background-image: none;
+  color: var(--text-dark);
   padding: 120px 24px 90px;
   direction: rtl;
 }
@@ -14393,6 +14386,11 @@ body {
 .nav-cta-btn { color: #FFFFFF !important; }
 /* === BUTTON TEXT OVERRIDES END === */
 
+
+.index-services-section {
+  background-color: var(--surface-color) !important;
+  background-image: none !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
