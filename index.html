@@ -1641,7 +1641,7 @@
           </div>
 
           <!-- Day labels -->
-          <div class="zappy-cal-days-row zappy-preserve-css-grid" style="--zappy-grid-cols: repeat(7,1fr); display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:4px; align-items: stretch !important;" data-zappy-explicit-columns="true" id="zappy-auto-grid-1777392094083-x996wu" data-zappy-auto-grid="true" data-original-item-width="69" data-original-gap="4px">
+          <div class="zappy-cal-days-row" style="--zappy-grid-cols: repeat(7,1fr)!important; display:grid;grid-template-columns:repeat(7,1fr)!important;gap:4px;margin-bottom:4px;" id="zappy-auto-grid-1777392094083-x996wu" data-zappy-explicit-columns="true" data-original-item-width="600">
             <span style="text-align:center;font-size:0.72rem;font-weight:700;color:#8C93A1;padding:4px 0;" data-grid-item-index="0">א׳</span>
             <span style="text-align:center;font-size:0.72rem;font-weight:700;color:#8C93A1;padding:4px 0;" data-grid-item-index="1">ב׳</span>
             <span style="text-align:center;font-size:0.72rem;font-weight:700;color:#8C93A1;padding:4px 0;" data-grid-item-index="2">ג׳</span>
@@ -1695,12 +1695,12 @@
                 cell.setAttribute('data-date', y+'-'+(m+1)+'-'+d);
                 var base = 'display:flex;align-items:center;justify-content:center;height:32px;border-radius:6px;font-size:0.82rem;font-weight:600;transition:all 0.18s;user-select:none;';
                 if (off) {
-                  cell.style.cssText = base + 'color:#3a3f52;cursor:default;';
+                  cell.style.cssText = base + 'color:#9AA0B0;cursor:default;';
                 } else {
-                  cell.style.cssText = base + (isTd ? 'color:#1A6BCC;border:1px solid rgba(0,212,255,0.5);background:rgba(0,212,255,0.06);cursor:pointer;' : 'color:#F5F3EE;background:rgba(255,255,255,0.04);cursor:pointer;');
+                  cell.style.cssText = base + (isTd ? 'color:#1A6BCC;border:1px solid rgba(0,212,255,0.5);background:rgba(0,212,255,0.06);cursor:pointer;' : 'color:#1A1E2E;background:rgba(26,107,204,0.06);cursor:pointer;');
                   (function(c){ 
                     c.addEventListener('mouseenter', function(){ if(!c.classList.contains('zs')){ c.style.background='rgba(0,212,255,0.15)'; c.style.color='#1A6BCC'; }});
-                    c.addEventListener('mouseleave', function(){ if(!c.classList.contains('zs')){ c.style.background='rgba(255,255,255,0.04)'; c.style.color='#F5F3EE'; }});
+                    c.addEventListener('mouseleave', function(){ if(!c.classList.contains('zs')){ c.style.background='rgba(26,107,204,0.06)'; c.style.color='#1A1E2E'; }});
                     c.addEventListener('click', function(){ pickDate(c); });
                   })(cell);
                 }
@@ -1836,11 +1836,11 @@
                 var base = 'display:flex;align-items:center;justify-content:center;height:32px;border-radius:6px;font-size:0.82rem;font-weight:600;cursor:pointer;transition:all 0.18s;user-select:none;';
 
                 if (isDisabled) {
-                  cell.style.cssText = base + 'color:#3a3f52;cursor:default;';
+                  cell.style.cssText = base + 'color:#9AA0B0;cursor:default;';
                 } else if (isToday) {
                   cell.style.cssText = base + 'color:#1A6BCC;border:1px solid rgba(0,212,255,0.5);background:rgba(0,212,255,0.06);';
                 } else {
-                  cell.style.cssText = base + 'color:#F5F3EE;background:rgba(255,255,255,0.04);';
+                  cell.style.cssText = base + 'color:#1A1E2E;background:rgba(26,107,204,0.06);';
                   cell.addEventListener('mouseenter', function() {
                     if (!this.classList.contains('zappy-cal-selected')) {
                       this.style.background = 'rgba(0,212,255,0.15)';
@@ -1849,8 +1849,8 @@
                   });
                   cell.addEventListener('mouseleave', function() {
                     if (!this.classList.contains('zappy-cal-selected')) {
-                      this.style.background = 'rgba(255,255,255,0.04)';
-                      this.style.color = '#F5F3EE';
+                      this.style.background = 'rgba(26,107,204,0.06)';
+                      this.style.color = '#1A1E2E';
                     }
                   });
                   cell.addEventListener('click', function() {

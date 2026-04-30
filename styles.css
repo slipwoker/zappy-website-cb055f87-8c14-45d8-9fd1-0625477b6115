@@ -14407,6 +14407,18 @@ body {
   grid-template-columns: repeat(7, 1fr) !important;
 }
 }
+
+@media (max-width: 768px) {
+.index-booking-section #zappy-interactive-cal {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+}
+
+.index-booking-section .zappy-cal-days-row {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+}
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
