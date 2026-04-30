@@ -1,22 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@400;500;600;700&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@400;500;600;700&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700;900&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700;900&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700;900&display=swap');
-
-
 
 /* Self-hosted fonts (Inter + Rubik for multi-language support) */
 
@@ -202,7 +184,11 @@
   --surface-color: #FFFFFF;
   --text-color: #1A1E2E;
   --text-secondary-color: #5A6175;
-}
+
+  --heading-font: 'Heebo', sans-serif;
+  --body-font: 'Heebo', sans-serif;
+  --font-family: 'Heebo', sans-serif;
+  --font-primary: 'Heebo', sans-serif;}
 
 *,
 *::before,
@@ -224,7 +210,7 @@ html {
 body {
   font-size: 16px !important;
   line-height: 1.7 !important;
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Heebo', sans-serif;
   background-color: var(--bg-dark);
   color: var(--text-light);
   -webkit-font-smoothing: antialiased;
@@ -239,7 +225,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Heebo', sans-serif;
   color: var(--text-light);
   font-weight: 700;
   letter-spacing: 0.01em;
@@ -3227,7 +3213,7 @@ html[dir="rtl"] .footer-contact li > a { flex-direction: row !important; }
 }
 
 .index-story-section .index-story-body {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Heebo', sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.75;
@@ -5067,7 +5053,7 @@ html[dir="rtl"] .footer-contact li > a { flex-direction: row !important; }
 }
 
 .about-intro-section .about-intro-h1 {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Heebo', sans-serif;
   font-size: 3.6rem;
   font-weight: 700;
   line-height: 1.12;
@@ -6754,7 +6740,7 @@ html[dir="rtl"] .footer-contact li > a { flex-direction: row !important; }
 }
 
 .expertise-intro-section .expertise-intro-body {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Heebo', sans-serif;
   font-size: 1rem;
   line-height: 1.75;
   color: rgba(245,243,238,0.72);
@@ -9478,7 +9464,7 @@ html[dir="rtl"] .footer-contact li > a { flex-direction: row !important; }
 
 /* Paragraph */
 .blog-consultation-cta-section .blog-cta-body {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Heebo', sans-serif;
   font-size: 16px;
   line-height: 1.75;
   color: var(--text-muted);
@@ -9750,7 +9736,7 @@ html[dir="rtl"] .footer-contact li > a { flex-direction: row !important; }
 
 /* Body paragraph */
 .reviews-intro-section .reviews-intro-body {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Heebo', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.75;
@@ -11213,7 +11199,7 @@ html[dir="rtl"] .footer-contact li > a { flex-direction: row !important; }
 }
 
 .book-intro-section .book-intro-body {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Heebo', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.75;
@@ -13642,56 +13628,56 @@ body.accessibility-widget-visible ._access-menu {
 }
 
 .index-hero-section h1, .index-hero-section h2 {
-  font-family: 'Frank Ruhl Libre', serif !important;
+  font-family: 'Heebo', sans-serif;
 }
 
 .index-hero-section h1, .index-hero-section h2 {
-  font-family: 'Frank Ruhl Libre', serif !important;
+  font-family: 'Heebo', sans-serif;
 }
 
 .index-hero-section h1[data-element-id],
 .index-hero-section h2[data-element-id],
 #index-hero-section h1,
 #index-hero-section h2 {
-  font-family: 'Frank Ruhl Libre', serif !important;
+  font-family: 'Heebo', sans-serif;
 }
 /* Font pairing applied */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Raleway:wght@400&display=swap');
-:root { --font-heading: 'Cinzel', sans-serif; --font-body: 'Raleway', sans-serif; }
-body { font-family: 'Raleway', sans-serif; font-weight: 400; }
-h1, h2, h3, h4, h5, h6 { font-family: 'Cinzel', sans-serif; font-weight: 700; }
+
+:root { --font-heading: 'Heebo', sans-serif; --font-body: 'Heebo', sans-serif; }
+body { font-family: 'Heebo', sans-serif; font-weight: 400; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Heebo', sans-serif; font-weight: 700; }
 
 /* Font pairing applied */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Raleway:wght@300&display=swap');
-:root { --font-heading: 'Cinzel', sans-serif; --font-body: 'Raleway', sans-serif; }
-body { font-family: 'Raleway', sans-serif; font-weight: 300; }
-h1, h2, h3, h4, h5, h6 { font-family: 'Cinzel', sans-serif; font-weight: 600; }
+
+:root { --font-heading: 'Heebo', sans-serif; --font-body: 'Heebo', sans-serif; }
+body { font-family: 'Heebo', sans-serif; font-weight: 300; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Heebo', sans-serif; font-weight: 600; }
 
 /* Font pairing applied */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Raleway:wght@400&display=swap');
-:root { --font-heading: 'Cormorant Garamond', sans-serif; --font-body: 'Raleway', sans-serif; }
-body { font-family: 'Raleway', sans-serif; font-weight: 400; }
-h1, h2, h3, h4, h5, h6 { font-family: 'Cormorant Garamond', sans-serif; font-weight: 700; }
+
+:root { --font-heading: 'Heebo', sans-serif; --font-body: 'Heebo', sans-serif; }
+body { font-family: 'Heebo', sans-serif; font-weight: 400; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Heebo', sans-serif; font-weight: 700; }
 
 /* Font pairing applied */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@700&family=Raleway:wght@400&display=swap');
-:root { --font-heading: 'Noto Serif Hebrew', sans-serif; --font-body: 'Raleway', sans-serif; }
-body { font-family: 'Raleway', sans-serif; font-weight: 400; }
-h1, h2, h3, h4, h5, h6 { font-family: 'Noto Serif Hebrew', sans-serif; font-weight: 700; }
+
+:root { --font-heading: 'Heebo', sans-serif; --font-body: 'Heebo', sans-serif; }
+body { font-family: 'Heebo', sans-serif; font-weight: 400; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Heebo', sans-serif; font-weight: 700; }
 
 /* Font pairing applied */
-@import url('https://fonts.googleapis.com/css2?family=Suez+One:wght@400&display=swap');
-:root { --font-heading: 'Suez One', sans-serif; }
-h1, h2, h3, h4, h5, h6 { font-family: 'Suez One', sans-serif; font-weight: 400; }
+
+:root { --font-heading: 'Heebo', sans-serif; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Heebo', sans-serif; font-weight: 400; }
 
 /* Font pairing applied */
-@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@700&display=swap');
-:root { --font-heading: 'Assistant', sans-serif; --font-body: 'Assistant', sans-serif; }
-body { font-family: 'Assistant', sans-serif; font-weight: 400; }
-h1, h2, h3, h4, h5, h6 { font-family: 'Assistant', sans-serif; font-weight: 700; }
+
+:root { --font-heading: 'Heebo', sans-serif; --font-body: 'Heebo', sans-serif; }
+body { font-family: 'Heebo', sans-serif; font-weight: 400; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Heebo', sans-serif; font-weight: 700; }
 
 /* Font pairing applied */
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@700&display=swap');
+
 :root { --font-heading: 'Heebo', sans-serif; --font-body: 'Heebo', sans-serif; }
 body { font-family: 'Heebo', sans-serif; font-weight: 400; }
 h1, h2, h3, h4, h5, h6 { font-family: 'Heebo', sans-serif; font-weight: 700; }
@@ -13707,35 +13693,35 @@ body {
 }
 
 :root {
-  --font-heading: 'Assistant', sans-serif;
-  --font-body: 'Assistant', sans-serif;
+  --font-heading: 'Heebo', sans-serif;
+  --font-body: 'Heebo', sans-serif;
 }
 
 body {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Heebo', sans-serif;
 }
 
 #index-hero-section h1, #index-hero-section h2 {
-  font-family: 'Alef', sans-serif !important;
+  font-family: 'Heebo', sans-serif;
 }
 /* Font pairing applied */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Raleway:wght@400&display=swap');
-:root { --font-heading: 'Cinzel', sans-serif; --font-body: 'Raleway', sans-serif; }
-body { font-family: 'Raleway', sans-serif; font-weight: 400; }
-h1, h2, h3, h4, h5, h6 { font-family: 'Cinzel', sans-serif; font-weight: 700; }
+
+:root { --font-heading: 'Heebo', sans-serif; --font-body: 'Heebo', sans-serif; }
+body { font-family: 'Heebo', sans-serif; font-weight: 400; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Heebo', sans-serif; font-weight: 700; }
 
 
 .index-hero-section h1,
 .index-hero-section h2,
 .index-hero-section h3 {
-  font-family: 'Cinzel', serif !important;
+  font-family: 'Heebo', sans-serif;
 }
 
 .index-hero-section p,
 .index-hero-section span,
 .index-hero-section a,
 .index-hero-section div {
-  font-family: 'Raleway', sans-serif !important;
+  font-family: 'Heebo', sans-serif !important;
 }
 
 .index-hero-section h1,
@@ -13743,13 +13729,13 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Cinzel', sans-serif; font-weight: 700; }
 .index-hero-section h3,
 .index-hero-section h1 *,
 .index-hero-section h2 * {
-  font-family: 'Cinzel', serif !important;
+  font-family: 'Heebo', sans-serif;
 }
 
 .index-hero-section p,
 .index-hero-section .index-hero-trust,
 .index-hero-section .index-hero-scroll-cue span {
-  font-family: 'Raleway', sans-serif !important;
+  font-family: 'Heebo', sans-serif !important;
 }
 
 #index-hero-section [data-element-id="move-1777365736682-6r0byvw8"] {
@@ -13757,7 +13743,7 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Cinzel', sans-serif; font-weight: 700; }
 }
 
 #index-hero-section h2 {
-  font-family: 'Handjet', sans-serif !important;
+  font-family: 'Heebo', sans-serif;
 }
 
 .index-services-section .index-services-section__card-bg-img {
