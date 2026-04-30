@@ -14457,6 +14457,10 @@ body {
   background-color: rgb(240, 243, 249) !important;
   background-image: linear-gradient(rgba(26, 107, 204, 0.05) 1px, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(26, 107, 204, 0.05) 1px, rgba(0, 0, 0, 0) 1px) !important;
 }
+
+.index-hero-section .index-hero-divider-wrapper {
+  display: none !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
