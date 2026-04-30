@@ -4366,18 +4366,16 @@ html[dir="rtl"] .footer-contact li > a { flex-direction: row !important; }
   }
 }
 
-/* index-booking */
 .index-booking-section {
   position: relative;
   overflow: visible;
   direction: rtl;
   background-color: #090B12;
-  background-image:
-    radial-gradient(circle at 15% 25%, rgba(0,212,255,0.10) 0%, transparent 40%),
+  background-image: radial-gradient(circle at 15% 25%, rgba(0,212,255,0.10) 0%, transparent 40%),
     radial-gradient(circle at 85% 75%, rgba(124,58,237,0.12) 0%, transparent 40%),
     linear-gradient(180deg, #0B0E16 0%, #090B12 100%);
   color: var(--text-light);
-  padding: 120px 24px 100px;
+  padding: 60px 24px 100px;
   font-family: 'Rubik', sans-serif;
 }
 
