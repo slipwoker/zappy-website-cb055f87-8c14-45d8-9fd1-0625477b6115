@@ -12732,13 +12732,7 @@ html[dir="rtl"] .footer-contact li > a { flex-direction: row !important; }
 }
 
 
-/* Logo size constraint - enforce max-height only */
-.logo, img.logo, .logo img, .logo-link img, .nav-brand img {
-  max-height: 40px !important;
-  height: auto !important;
-  width: auto !important;
-  object-fit: contain !important;
-}
+
 
 
 /* Hide WhatsApp float button on desktop (mobile-only) */
@@ -13961,6 +13955,153 @@ nav.navbar .sub-menu li a {
 }
 
 .navbar.scrolled .search-toggle {
+  color: #1a2a4a !important;
+}
+/* Zappy custom logo size (desktop only — mobile stays at 110px/35px) */
+@media (min-width: 769px) {
+  .logo, img.logo, .logo img, .logo-link img, .nav-brand img {
+    max-height: none !important;
+    height: 64px !important;
+    max-width: 256px !important;
+    width: auto !important;
+    object-fit: contain !important;
+  }
+  .nav-container {
+    min-height: 94px !important;
+  }
+}
+/* /Zappy custom logo size */
+
+
+.navbar .nav-right-group {
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  gap: 4px !important;
+  padding: 6px 0 !important;
+}
+
+.navbar .nav-brand {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+  order: -1 !important;
+}
+
+.navbar .nav-brand .logo-link {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.navbar .nav-menu {
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+.navbar .nav-container {
+  flex-direction: column !important;
+  align-items: center !important;
+  padding: 6px 40px !important;
+}
+
+.navbar .nav-cta-container {
+  display: none !important;
+}
+
+.navbar .nav-menu > li > a {
+  color: #1a2a4a !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+}
+
+.navbar .nav-menu > li > a:hover {
+  color: #1a6abf !important;
+}
+
+.navbar .nav-menu > li > a[href="/"] {
+  border-bottom: 2px solid #1a6abf !important;
+  color: #1a6abf !important;
+  padding-bottom: 2px !important;
+}
+
+.navbar .nav-menu > .nav-item > a {
+  color: #1a2a4a !important;
+}
+
+.navbar .navbar-nav .nav-link {
+  color: #1a2a4a !important;
+}
+
+.navbar .dropdown-menu li a {
+  color: #1a2a4a !important;
+}
+
+.navbar .dropdown-menu .dropdown-item {
+  color: #1a2a4a !important;
+}
+
+.navbar .sub-menu li a {
+  color: #1a2a4a !important;
+}
+
+.navbar .nav-menu .sub-menu a {
+  color: #1a2a4a !important;
+}
+
+.navbar .nav-menu .sub-menu li a {
+  color: #1a2a4a !important;
+}
+
+.navbar .zappy-products-dropdown .sub-menu a {
+  color: #1a2a4a !important;
+}
+
+nav.navbar .sub-menu li a {
+  color: #1a2a4a !important;
+}
+
+.navbar .nav-search-box .nav-search-input {
+  color: #1a2a4a !important;
+}
+
+.navbar .cart-link.nav-cart {
+  color: #1a2a4a !important;
+}
+
+.navbar .login-link.nav-login {
+  color: #1a2a4a !important;
+}
+
+.navbar .cart-link.nav-cart svg {
+  color: #1a2a4a !important;
+}
+
+.navbar .login-link.nav-login svg {
+  color: #1a2a4a !important;
+}
+
+.navbar.scrolled .cart-link.nav-cart {
+  color: #1a2a4a !important;
+}
+
+.navbar.scrolled .login-link.nav-login {
+  color: #1a2a4a !important;
+}
+
+.navbar.scrolled .nav-search-toggle {
+  color: #1a2a4a !important;
+}
+
+.navbar.scrolled .search-toggle {
+  color: #1a2a4a !important;
+}
+
+.navbar .nav-menu > li.active > a {
+  color: #1a2a4a !important;
+}
+
+.navbar .nav-menu > li > a[aria-current="page"] {
   color: #1a2a4a !important;
 }
 /* mobile-submenu-overflow-fix */
