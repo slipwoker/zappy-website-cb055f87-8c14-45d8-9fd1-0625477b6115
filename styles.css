@@ -14434,6 +14434,27 @@ body {
 .site-footer .footer-social a:hover i {
   color: var(--secondary-color) !important;
 }
+
+.site-footer .footer-social a {
+  background-color: rgba(26, 107, 204, 0.12) !important;
+  color: var(--primary-color) !important;
+}
+
+.site-footer .footer-social a i {
+  color: var(--primary-color) !important;
+}
+
+.site-footer .footer-social a:hover {
+  background-color: var(--primary-color) !important;
+}
+
+.site-footer .footer-social a:hover i {
+  color: var(--surface-color) !important;
+}
+
+.site-footer .footer-social a i {
+  color: var(--primary-color) !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
