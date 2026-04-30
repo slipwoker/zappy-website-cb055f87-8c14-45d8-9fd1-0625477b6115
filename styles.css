@@ -3827,11 +3827,11 @@ html[dir="rtl"] .footer-contact li > a { flex-direction: row !important; }
 .index-reviews-section {
   position: relative;
   overflow: visible;
-  background-color: #090B12;
+  background-color: rgb(232, 236, 244);
   color: var(--text-light);
   padding: 120px 0 0;
   direction: rtl;
-  background-image: radial-gradient(circle at 15% 25%, rgba(0,212,255,0.10) 0%, transparent 40%), radial-gradient(circle at 85% 75%, rgba(124,58,237,0.12) 0%, transparent 40%), linear-gradient(180deg, #0B0E16 0%, #090B12 100%);
+  background-image: linear-gradient(rgba(26, 107, 204, 0.06) 1px, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(26, 107, 204, 0.06) 1px, rgba(0, 0, 0, 0) 1px), radial-gradient(circle at 15% 25%, rgba(26, 107, 204, 0.08) 0%, rgba(0, 0, 0, 0) 40%), radial-gradient(circle at 85% 75%, rgba(74, 42, 158, 0.08) 0%, rgba(0, 0, 0, 0) 40%);
 }
 
 /* ── Container ── */
@@ -14453,6 +14453,11 @@ body {
 
 .site-footer .footer-social a i {
   color: var(--primary-color) !important;
+}
+
+.index-reviews-section {
+  background-color: rgb(232, 236, 244) !important;
+  background-image: linear-gradient(rgba(26, 107, 204, 0.06) 1px, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(26, 107, 204, 0.06) 1px, rgba(0, 0, 0, 0) 1px), radial-gradient(circle at 15% 25%, rgba(26, 107, 204, 0.08) 0%, rgba(0, 0, 0, 0) 40%), radial-gradient(circle at 85% 75%, rgba(74, 42, 158, 0.08) 0%, rgba(0, 0, 0, 0) 40%) !important;
 }
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
