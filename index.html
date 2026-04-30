@@ -1369,10 +1369,12 @@
   </div>
   <!-- /container -->
 
-  <!-- Bottom Divider: wave transition to reviews section -->
-  <div class="index-services-section__divider-wrapper" style="position:absolute;bottom:0;left:0;width:100%;overflow:hidden;line-height:0;z-index:2;">
-    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:80px;">
-      <path d="M0,40 C180,80 360,0 540,40 C720,80 900,0 1080,40 C1260,80 1380,20 1440,40 L1440,80 L0,80 Z" fill="#090B12"></path>
+  <!-- Bottom Divider: angular SVG edge with cyan-to-violet gradient line transitioning to light reviews section -->
+  <div class="index-services-section__divider-wrapper">
+    <!-- Gradient accent line -->
+    <div class="index-services-section__divider-gradient-line" aria-hidden="true"></div>
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,90 L0,42 L120,28 L240,48 L360,18 L480,38 L600,12 L720,36 L840,20 L960,44 L1080,24 L1200,40 L1200,90 Z" fill="#090B12"></path>
     </svg>
   </div>
 
@@ -1531,10 +1533,18 @@
 
   </div>
 
-  <!-- Bottom Divider: wave transition to booking section -->
-  <div class="reviews-divider-wrapper" aria-hidden="true" style="position:absolute;bottom:0;left:0;width:100%;overflow:hidden;line-height:0;z-index:2;">
-    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:80px;">
-      <path d="M0,40 C180,80 360,0 540,40 C720,80 900,0 1080,40 C1260,80 1380,20 1440,40 L1440,80 L0,80 Z" fill="#090B12"></path>
+  <!-- Bottom Divider: soft wavy transition to booking section -->
+  <div class="reviews-divider-wrapper" aria-hidden="true" style="line-height:0;overflow:hidden;margin-bottom:-2px;">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:120px;">
+      <defs>
+        <linearGradient id="waveBgGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#E8EEF8" stop-opacity="0.5"></stop>
+          <stop offset="100%" stop-color="#090B12" stop-opacity="1"></stop>
+        </linearGradient>
+      </defs>
+      <rect width="1440" height="120" fill="url(#waveBgGrad)"></rect>
+      <path d="M0,60 C180,100 360,20 540,60 C720,100 900,20 1080,60 C1260,100 1380,40 1440,55 L1440,120 L0,120 Z" fill="#090B12" opacity="1"></path>
+      <path d="M0,75 C200,110 400,35 600,70 C800,105 1000,30 1200,65 C1320,85 1390,55 1440,65 L1440,120 L0,120 Z" fill="#090B12" opacity="0.6"></path>
     </svg>
   </div>
 
