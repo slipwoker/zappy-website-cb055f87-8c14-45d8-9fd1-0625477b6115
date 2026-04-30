@@ -14455,6 +14455,18 @@ body {
 .site-footer .footer-social a i {
   color: var(--primary-color) !important;
 }
+
+.index-services-section {
+  position: relative !important;
+  overflow: visible !important;
+  padding-bottom: 90px !important;
+}
+
+.index-reviews-section {
+  position: relative !important;
+  overflow: visible !important;
+  padding-bottom: 90px !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
