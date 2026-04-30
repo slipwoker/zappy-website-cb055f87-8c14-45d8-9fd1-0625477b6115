@@ -14201,6 +14201,94 @@ nav.navbar .sub-menu li a {
   content: '';
   background-color: var(--primary) !important;
 }
+
+.index-hero-section {
+  padding-left: 48px !important;
+  padding-right: 48px !important;
+  background-color: #ffffff !important;
+  overflow: visible !important;
+}
+
+.index-hero-section .zappy-section-video-bg {
+  left: 48px !important;
+  right: 48px !important;
+  inset: unset !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+}
+
+.index-hero-section .index-hero-bg {
+  left: 48px !important;
+  right: 48px !important;
+  inset: unset !important;
+  top: 0 !important;
+  bottom: 0 !important;
+}
+
+.index-hero-section .index-hero-scrim,
+.index-hero-section .index-hero-grid-texture,
+.index-hero-section .index-hero-glow,
+.index-hero-section .index-hero-divider-wrapper {
+  left: 48px !important;
+  right: 48px !important;
+}
+
+.index-hero-section .index-hero-divider-wrapper {
+  bottom: 0 !important;
+}
+
+@media (max-width: 768px) {
+.index-hero-section {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+.index-hero-section .zappy-section-video-bg {
+  left: 16px !important;
+  right: 16px !important;
+  border-radius: 12px !important;
+}
+
+.index-hero-section .index-hero-bg,
+  .index-hero-section .index-hero-scrim,
+  .index-hero-section .index-hero-grid-texture,
+  .index-hero-section .index-hero-glow,
+  .index-hero-section .index-hero-divider-wrapper {
+  left: 16px !important;
+  right: 16px !important;
+}
+}
+
+.navbar {
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.3s ease !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+}
+
+.navbar.nav-hidden {
+  transform: translateY(-100%) !important;
+}
+
+body {
+  background-color: #f5f5f7 !important;
+  background-image: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.045) 0px,
+      rgba(0, 0, 0, 0.045) 1px,
+      transparent 1px,
+      transparent 48px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.045) 0px,
+      rgba(0, 0, 0, 0.045) 1px,
+      transparent 1px,
+      transparent 48px
+    ) !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
