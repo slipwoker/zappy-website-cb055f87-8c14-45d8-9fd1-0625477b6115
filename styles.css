@@ -14128,6 +14128,17 @@ nav.navbar .sub-menu li a {
 }
 /* /Zappy custom logo size */
 
+
+.navbar .nav-container {
+  min-height: 120px !important;
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+
+.navbar {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
