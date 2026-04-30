@@ -14461,6 +14461,12 @@ body {
 .index-hero-section .index-hero-divider-wrapper {
   display: none !important;
 }
+
+.index-hero-section .zappy-section-video-bg {
+  inset: 0 5% !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
