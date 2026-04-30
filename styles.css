@@ -14104,6 +14104,28 @@ nav.navbar .sub-menu li a {
 .navbar .nav-menu > li > a[aria-current="page"] {
   color: #1a2a4a !important;
 }
+
+.navbar .nav-brand img.logo {
+  width: 200px !important;
+  height: auto !important;
+  max-height: 80px !important;
+}
+
+.navbar .nav-brand {
+  order: 0 !important;
+  padding: 8px 0 4px !important;
+}
+
+.navbar .nav-menu {
+  order: 1 !important;
+}
+
+.navbar .nav-right-group {
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 2px !important;
+  padding-bottom: 6px !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
