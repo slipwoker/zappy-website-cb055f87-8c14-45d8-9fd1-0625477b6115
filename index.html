@@ -1695,9 +1695,9 @@
                 cell.setAttribute('data-date', y+'-'+(m+1)+'-'+d);
                 var base = 'display:flex;align-items:center;justify-content:center;height:32px;border-radius:6px;font-size:0.82rem;font-weight:600;transition:all 0.18s;user-select:none;';
                 if (off) {
-                  cell.style.cssText = base + 'color:#9AA0B0;cursor:default;';
+                  cell.style.cssText = base + 'color:#6B7280;cursor:default;';
                 } else {
-                  cell.style.cssText = base + (isTd ? 'color:#1A6BCC;border:1px solid rgba(0,212,255,0.5);background:rgba(0,212,255,0.06);cursor:pointer;' : 'color:#1A1E2E;background:rgba(26,107,204,0.06);cursor:pointer;');
+                  cell.style.cssText = base + (isTd ? 'color:#1A6BCC;border:1px solid rgba(0,212,255,0.5);background:rgba(0,212,255,0.06);cursor:pointer;' : 'color:#1A1E2E;font-weight:700;background:rgba(26,107,204,0.06);cursor:pointer;');
                   (function(c){ 
                     c.addEventListener('mouseenter', function(){ if(!c.classList.contains('zs')){ c.style.background='rgba(0,212,255,0.15)'; c.style.color='#1A6BCC'; }});
                     c.addEventListener('mouseleave', function(){ if(!c.classList.contains('zs')){ c.style.background='rgba(26,107,204,0.06)'; c.style.color='#1A1E2E'; }});
