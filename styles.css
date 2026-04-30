@@ -2747,12 +2747,14 @@ html[dir="rtl"] .footer-contact li > a { flex-direction: row !important; }
   min-height: 420px;
   display: flex;
   align-items: center;
-  overflow: visible;
+  overflow: hidden;
   background-color: #090B12;
   color: var(--text-light);
   padding-bottom: 90px;
   direction: rtl;
   height: 420px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* ── Background Image ── */
