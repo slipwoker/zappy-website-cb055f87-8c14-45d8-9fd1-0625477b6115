@@ -14391,6 +14391,15 @@ body {
   background-color: var(--surface-color) !important;
   background-image: none !important;
 }
+
+.index-services-section .index-services-section__bg-texture {
+  display: none !important;
+}
+
+.index-services-section .index-services-section__orb--cyan,
+.index-services-section .index-services-section__orb--violet {
+  display: none !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
