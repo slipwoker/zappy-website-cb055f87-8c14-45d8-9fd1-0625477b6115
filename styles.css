@@ -14400,6 +14400,13 @@ body {
 .index-services-section .index-services-section__orb--violet {
   display: none !important;
 }
+
+@media (max-width: 768px) {
+.index-booking-section #zappy-auto-grid-1777392094083-x996wu {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+}
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
