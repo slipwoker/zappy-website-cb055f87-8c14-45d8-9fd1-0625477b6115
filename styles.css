@@ -3831,6 +3831,7 @@ html[dir="rtl"] .footer-contact li > a { flex-direction: row !important; }
   color: var(--text-light);
   padding: 120px 0 0;
   direction: rtl;
+  background-image: radial-gradient(circle at 15% 25%, rgba(0,212,255,0.10) 0%, transparent 40%), radial-gradient(circle at 85% 75%, rgba(124,58,237,0.12) 0%, transparent 40%), linear-gradient(180deg, #0B0E16 0%, #090B12 100%);
 }
 
 /* ── Container ── */
