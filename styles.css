@@ -14419,6 +14419,13 @@ body {
   grid-template-columns: repeat(7, 1fr) !important;
 }
 }
+
+.index-booking-section #zappy-timeslots-grid div[data-time] {
+  color: var(--text-color) !important;
+  background: rgba(255, 255, 255, 0.18) !important;
+  border-color: rgba(26, 107, 204, 0.5) !important;
+  font-weight: 700 !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
