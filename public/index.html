@@ -1707,7 +1707,123 @@
     <i class="fab fa-whatsapp"></i>
   </a>
   
-  <script>
+  <canvas id="zappy-particles-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:0.7;"></canvas>
+<script>
+(function() {
+  var canvas = document.getElementById('zappy-particles-canvas');
+  var ctx = canvas.getContext('2d');
+  var W, H, particles = [], mouse = { x: -9999, y: -9999 };
+  var PARTICLE_COUNT = 90;
+  var MOUSE_RADIUS = 130;
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  document.addEventListener('mousemove', function(e) {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  });
+  document.addEventListener('mouseleave', function() {
+    mouse.x = -9999;
+    mouse.y = -9999;
+  });
+
+  // Oval / bean-like shape for coffee beans
+  function drawBean(ctx, x, y, w, h, angle, color) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(angle);
+    ctx.beginPath();
+    // Coffee bean body
+    ctx.ellipse(0, 0, w, h, 0, 0, Math.PI * 2);
+    ctx.fillStyle = color;
+    ctx.fill();
+    // Coffee bean crease line
+    ctx.beginPath();
+    ctx.moveTo(0, -h * 0.75);
+    ctx.bezierCurveTo(w * 0.3, -h * 0.2, w * 0.3, h * 0.2, 0, h * 0.75);
+    ctx.strokeStyle = 'rgba(0,0,0,0.35)';
+    ctx.lineWidth = w * 0.18;
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function randomBetween(a, b) { return a + Math.random() * (b - a); }
+
+  function createParticle() {
+    var w = randomBetween(7, 18);
+    var colors = [
+      'rgba(80,40,15,0.92)',
+      'rgba(110,55,20,0.88)',
+      'rgba(60,28,10,0.90)',
+      'rgba(140,75,30,0.85)',
+      'rgba(90,45,15,0.90)',
+      'rgba(55,25,8,0.87)',
+    ];
+    return {
+      x: randomBetween(0, window.innerWidth),
+      y: randomBetween(0, window.innerHeight),
+      w: w,
+      h: w * randomBetween(0.45, 0.60),
+      angle: randomBetween(0, Math.PI * 2),
+      vx: randomBetween(-0.35, 0.35),
+      vy: randomBetween(0.18, 0.55),
+      va: randomBetween(-0.008, 0.008),
+      color: colors[Math.floor(Math.random() * colors.length)],
+      ox: 0, oy: 0,
+    };
+  }
+
+  for (var i = 0; i < PARTICLE_COUNT; i++) {
+    particles.push(createParticle());
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, W, H);
+
+    for (var i = 0; i < particles.length; i++) {
+      var p = particles[i];
+
+      // Mouse repulsion
+      var dx = p.x - mouse.x;
+      var dy = p.y - mouse.y;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < MOUSE_RADIUS && dist > 0) {
+        var force = (MOUSE_RADIUS - dist) / MOUSE_RADIUS;
+        var fx = (dx / dist) * force * 5.5;
+        var fy = (dy / dist) * force * 5.5;
+        p.vx += fx;
+        p.vy += fy;
+      }
+
+      // Friction + gravity
+      p.vx *= 0.96;
+      p.vy *= 0.96;
+      p.vy += 0.012;
+
+      p.x += p.vx;
+      p.y += p.vy;
+      p.angle += p.va;
+
+      // Wrap around edges
+      if (p.x < -30) p.x = W + 30;
+      if (p.x > W + 30) p.x = -30;
+      if (p.y > H + 30) { p.y = -30; p.x = randomBetween(0, W); }
+      if (p.y < -30) p.y = H + 30;
+
+      drawBean(ctx, p.x, p.y, p.w, p.h, p.angle, p.color);
+    }
+
+    requestAnimationFrame(animate);
+  }
+  animate();
+})();
+</script>
+<script>
 // Navbar hide on scroll
 (function() {
   var navbar = document.querySelector('.navbar');
