@@ -14685,6 +14685,259 @@ html {
 .index-services-section .index-services-section__card:nth-child(9) {
   animation-delay: 0.28s !important;
 }
+
+/* Cloned section from URL */
+/* ===== HERO BUSHARI SECTION ===== */
+.hero-bushari {
+  font-family: system-ui, sans-serif;
+  direction: rtl;
+  text-align: right;
+  background-color: var(--surface-color, #ffffff);
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Navigation Bar --- */
+.hero-bushari__nav {
+  background-color: var(--surface-color, #ffffff);
+  border-bottom: 1px solid rgba(26, 107, 204, 0.12);
+  padding: 0 40px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(18, 21, 30, 0.06);
+}
+
+.hero-bushari__nav-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-bushari__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hero-bushari__logo-initials {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--secondary-color, #2D1B69);
+  letter-spacing: 1px;
+  font-style: italic;
+  line-height: 1;
+  border: 2px solid var(--accent-color, #C9952A);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.hero-bushari__logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero-bushari__logo-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--secondary-color, #2D1B69);
+  line-height: 1.2;
+  letter-spacing: 0.3px;
+}
+
+.hero-bushari__logo-tagline {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-secondary-color, #5A6175);
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+}
+
+.hero-bushari__nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.hero-bushari__nav-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color, #12151E);
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  padding: 6px 0;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.hero-bushari__nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color, #C9952A);
+  transition: width 0.25s ease;
+}
+
+.hero-bushari__nav-link:hover {
+  color: var(--primary-color, #1A6BCC);
+}
+
+.hero-bushari__nav-link:hover::after {
+  width: 100%;
+}
+
+/* --- Hero Banner --- */
+.hero-bushari__banner {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 72px);
+  min-height: 520px;
+  max-height: 900px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.hero-bushari__bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.hero-bushari__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(18, 21, 30, 0.25) 0%,
+    rgba(18, 21, 30, 0.35) 40%,
+    rgba(18, 21, 30, 0.72) 80%,
+    rgba(18, 21, 30, 0.82) 100%
+  );
+  z-index: 1;
+}
+
+.hero-bushari__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px 80px 60px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-bushari__text-block {
+  max-width: 600px;
+  text-align: right;
+}
+
+.hero-bushari__heading {
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  margin: 0 0 18px 0;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero-bushari__subtitle {
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.6;
+  margin: 0;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .hero-bushari__nav {
+    padding: 0 20px;
+    height: 64px;
+  }
+
+  .hero-bushari__logo-tagline {
+    display: none;
+  }
+
+  .hero-bushari__logo-name {
+    font-size: 13px;
+  }
+
+  .hero-bushari__logo-initials {
+    font-size: 20px;
+    padding: 3px 6px;
+  }
+
+  .hero-bushari__nav-links {
+    gap: 20px;
+  }
+
+  .hero-bushari__nav-link {
+    font-size: 13px;
+  }
+
+  .hero-bushari__banner {
+    height: calc(100vh - 64px);
+    min-height: 400px;
+  }
+
+  .hero-bushari__content {
+    padding: 0 24px 56px 24px;
+    justify-content: flex-end;
+  }
+
+  .hero-bushari__text-block {
+    max-width: 100%;
+  }
+
+  .hero-bushari__heading {
+    font-size: clamp(2rem, 9vw, 3rem);
+    margin-bottom: 14px;
+  }
+
+  .hero-bushari__subtitle {
+    font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-bushari__nav {
+    padding: 0 16px;
+  }
+
+  .hero-bushari__content {
+    padding: 0 20px 44px 20px;
+  }
+
+  .hero-bushari__heading {
+    font-size: 2rem;
+  }
+
+  .hero-bushari__subtitle {
+    font-size: 0.95rem;
+  }
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
