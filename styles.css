@@ -15374,6 +15374,28 @@ nav.navbar .sub-menu li a {
   order: 3 !important;
   flex: 0 0 auto !important;
 }
+
+.nav-brand-center {
+  display: none !important;
+}
+
+.nav-right-group {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  flex-direction: row-reverse !important;
+}
+
+.nav-right-group .nav-brand {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.navbar .logo {
+  height: 50px !important;
+  width: auto !important;
+  max-width: none !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
