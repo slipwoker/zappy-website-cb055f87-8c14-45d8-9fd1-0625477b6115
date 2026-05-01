@@ -15224,6 +15224,56 @@ nav.navbar .sub-menu li a {
 .navbar .nav-cta-btn {
   color: var(--surface-color) !important;
 }
+
+.navbar .nav-container {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  padding: 0 24px !important;
+  position: relative !important;
+  min-height: 70px !important;
+}
+
+.navbar .nav-brand-center {
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 10 !important;
+  pointer-events: auto !important;
+}
+
+.navbar .nav-right-group {
+  order: 1 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  flex-shrink: 0 !important;
+  max-width: calc(50% - 100px) !important;
+}
+
+.navbar .nav-right-group .nav-menu {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 0 !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.navbar .nav-cta-container {
+  order: 3 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+.navbar .nav-menu > li > a {
+  padding: 22px 12px !important;
+  white-space: nowrap !important;
+  font-size: 14px !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
