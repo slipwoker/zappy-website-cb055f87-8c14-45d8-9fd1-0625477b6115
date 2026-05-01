@@ -14469,6 +14469,24 @@ body {
   order: 1 !important;
   justify-self: end !important;
 }
+
+.navbar .nav-right-group {
+  margin-inline-start: auto !important;
+  margin-inline-end: 0 !important;
+  order: 3 !important;
+}
+
+.navbar .nav-brand-center {
+  order: 1 !important;
+  margin-inline-start: 0 !important;
+  margin-inline-end: auto !important;
+}
+
+.navbar .nav-cta-container {
+  order: 2 !important;
+  margin-inline-start: 0 !important;
+  margin-inline-end: 0 !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
