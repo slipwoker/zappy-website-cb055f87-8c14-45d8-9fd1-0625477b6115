@@ -15344,6 +15344,35 @@ nav.navbar .sub-menu li a {
 }
 /* /Zappy custom logo size */
 
+
+.nav-container {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+}
+
+.nav-brand-center {
+  order: 1 !important;
+  flex: 0 0 auto !important;
+  margin: 0 !important;
+  position: static !important;
+  transform: none !important;
+  left: auto !important;
+}
+
+.nav-left-group {
+  order: 2 !important;
+  flex: 1 1 auto !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.nav-right-group {
+  order: 3 !important;
+  flex: 0 0 auto !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
