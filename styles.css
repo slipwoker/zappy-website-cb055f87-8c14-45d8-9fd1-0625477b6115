@@ -14425,6 +14425,29 @@ body {
 .index-hero-section .zappy-section-video-bg {
   z-index: 0 !important;
 }
+
+@media (max-width: 768px) {
+.navbar {
+  position: relative !important;
+  z-index: 9999 !important;
+}
+
+.nav-menu.active {
+  display: flex !important;
+  flex-direction: column !important;
+  position: fixed !important;
+  top: 70px !important;
+  right: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: 9998 !important;
+  background: #090B12 !important;
+  padding: 24px 20px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important;
+  overflow-y: auto !important;
+  max-height: calc(100vh - 70px) !important;
+}
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
