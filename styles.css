@@ -15488,6 +15488,298 @@ body {
 .index-booking-section .index-booking-section__heading {
   color: #A0A8B8 !important;
 }
+
+/* AI-generated section */
+/* =============================================
+   QUOTE + PORTRAIT SECTION — Daniel Bushari
+   ============================================= */
+
+.db-quote-portrait {
+  position: relative;
+  background-color: #080c12;
+  background-image:
+    radial-gradient(ellipse at 70% 50%, rgba(26, 107, 204, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(74, 42, 158, 0.07) 0%, transparent 55%);
+  padding: 100px 40px;
+  overflow: hidden;
+  direction: rtl;
+  font-family: system-ui, sans-serif;
+}
+
+/* Subtle grain texture overlay */
+.db-quote-texture {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Inner layout container */
+.db-quote-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ---- LEFT COLUMN: Image ---- */
+.db-quote-image-col {
+  position: relative;
+}
+
+.db-quote-image-frame {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+/* Decorative top-left corner accent border */
+.db-quote-image-border-accent {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 80px;
+  height: 80px;
+  border-top: 3px solid var(--accent-color, #00C3EA);
+  border-right: 3px solid var(--accent-color, #00C3EA);
+  z-index: 3;
+  pointer-events: none;
+  border-radius: 0 4px 0 0;
+}
+
+.db-quote-portrait-img {
+  display: block;
+  width: 100%;
+  height: 580px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 4px;
+  filter: grayscale(20%) contrast(1.1) brightness(0.92);
+  transition: filter 0.4s ease;
+}
+
+.db-quote-portrait-img:hover {
+  filter: grayscale(0%) contrast(1.05) brightness(0.95);
+}
+
+/* Gradient overlay on image bottom */
+.db-quote-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  background: linear-gradient(to top, rgba(8, 12, 18, 0.75) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 2;
+  border-radius: 0 0 4px 4px;
+}
+
+/* ---- RIGHT COLUMN: Quote ---- */
+.db-quote-content-col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+/* Opening decorative quote mark */
+.db-quote-mark-open {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 160px;
+  line-height: 0.8;
+  color: var(--accent-color, #00C3EA);
+  opacity: 0.18;
+  position: absolute;
+  top: -10px;
+  right: -20px;
+  pointer-events: none;
+  user-select: none;
+  font-weight: 700;
+}
+
+/* Closing decorative quote mark */
+.db-quote-mark-close {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 120px;
+  line-height: 1;
+  color: var(--accent-color, #00C3EA);
+  opacity: 0.12;
+  position: absolute;
+  bottom: 60px;
+  left: -10px;
+  pointer-events: none;
+  user-select: none;
+  font-weight: 700;
+}
+
+/* Blockquote reset */
+.db-quote-blockquote {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* The quote text itself */
+.db-quote-text {
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-weight: 300;
+  line-height: 1.65;
+  color: #EAEEF4;
+  letter-spacing: 0.01em;
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* ---- Footer: Divider + Author ---- */
+.db-quote-footer {
+  margin-top: 44px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Cyan decorative divider bar */
+.db-quote-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-color, #00C3EA) 0%, rgba(0, 195, 234, 0.2) 100%);
+  border-radius: 2px;
+  margin-bottom: 20px;
+  margin-right: 0;
+}
+
+.db-quote-author {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.db-quote-author-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-color, #F0F0F0);
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+
+.db-quote-author-title {
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: var(--text-secondary-color, #8C93A1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* =============================================
+   RESPONSIVE — Tablet
+   ============================================= */
+@media (max-width: 1024px) {
+  .db-quote-inner {
+    grid-template-columns: 340px 1fr;
+    gap: 50px;
+  }
+
+  .db-quote-portrait-img {
+    height: 480px;
+  }
+
+  .db-quote-text {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+  }
+
+  .db-quote-mark-open {
+    font-size: 120px;
+    right: -10px;
+  }
+}
+
+/* =============================================
+   RESPONSIVE — Mobile
+   ============================================= */
+@media (max-width: 768px) {
+  .db-quote-portrait {
+    padding: 70px 24px;
+  }
+
+  .db-quote-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* On mobile: image comes first (top), then quote */
+  .db-quote-image-col {
+    order: 1;
+  }
+
+  .db-quote-content-col {
+    order: 2;
+    padding: 10px 0 0;
+  }
+
+  .db-quote-portrait-img {
+    height: 420px;
+    object-position: top center;
+  }
+
+  .db-quote-mark-open {
+    font-size: 100px;
+    top: -15px;
+    right: -5px;
+  }
+
+  .db-quote-mark-close {
+    font-size: 80px;
+    bottom: 30px;
+    left: -5px;
+  }
+
+  .db-quote-text {
+    font-size: 1.45rem;
+    line-height: 1.7;
+  }
+
+  .db-quote-footer {
+    margin-top: 32px;
+  }
+
+  .db-quote-image-border-accent {
+    width: 55px;
+    height: 55px;
+    top: -6px;
+    right: -6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .db-quote-portrait {
+    padding: 56px 18px;
+  }
+
+  .db-quote-portrait-img {
+    height: 340px;
+  }
+
+  .db-quote-text {
+    font-size: 1.25rem;
+  }
+
+  .db-quote-author-name {
+    font-size: 1.1rem;
+  }
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
