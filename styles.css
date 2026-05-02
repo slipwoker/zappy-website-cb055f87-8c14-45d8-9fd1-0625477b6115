@@ -15878,6 +15878,69 @@ body {
   background: linear-gradient(90deg, transparent, rgba(0,195,234,0.3) 15%, rgba(255,255,255,0.08) 50%, rgba(74,42,158,0.3) 85%, transparent);
   z-index: 2;
 }
+
+.index-services-section {
+  position: relative;
+}
+
+.index-services-section::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    transparent 6px,
+    rgba(0,195,234,0.45) 6px,
+    rgba(0,195,234,0.45) 10px
+  );
+  z-index: 3;
+}
+
+.index-reviews-section {
+  position: relative;
+}
+
+.index-reviews-section::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(74,42,158,0.3) 10%,
+    rgba(0,195,234,0.7) 40%,
+    rgba(255,255,255,0.15) 50%,
+    rgba(0,195,234,0.7) 60%,
+    rgba(74,42,158,0.3) 90%,
+    transparent 100%
+  );
+  z-index: 3;
+}
+
+.index-booking-section {
+  position: relative;
+}
+
+.index-booking-section::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, transparent, rgba(0,195,234,0.5) 20%, rgba(0,195,234,0.5) 80%, transparent) top / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent, rgba(74,42,158,0.3) 30%, rgba(74,42,158,0.3) 70%, transparent) bottom / 100% 1px no-repeat;
+  z-index: 3;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
