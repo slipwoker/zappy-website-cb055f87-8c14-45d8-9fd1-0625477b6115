@@ -15780,6 +15780,104 @@ body {
     font-size: 1.1rem;
   }
 }
+
+.index-hero-section::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent 0%, rgba(0,195,234,0.0) 0%, var(--accent-color) 30%, var(--secondary-color) 70%, rgba(74,42,158,0) 100%);
+  z-index: 10;
+}
+
+.db-quote-section {
+  position: relative;
+}
+
+.db-quote-section::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+  border-radius: 2px;
+}
+
+.index-services-section {
+  position: relative;
+}
+
+.index-services-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 18px,
+    rgba(0,195,234,0.35) 18px,
+    rgba(0,195,234,0.35) 20px
+  );
+  z-index: 2;
+}
+
+.index-reviews-section {
+  position: relative;
+}
+
+.index-reviews-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(
+    170deg,
+    transparent 49.5%,
+    rgba(0,195,234,0.18) 49.5%,
+    rgba(0,195,234,0.18) 50.5%,
+    transparent 50.5%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.index-booking-section {
+  position: relative;
+}
+
+.index-booking-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,195,234,0.4) 20%, rgba(74,42,158,0.4) 50%, rgba(0,195,234,0.4) 80%, transparent);
+  z-index: 2;
+}
+
+.index-reviews-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,195,234,0.3) 15%, rgba(255,255,255,0.08) 50%, rgba(74,42,158,0.3) 85%, transparent);
+  z-index: 2;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
