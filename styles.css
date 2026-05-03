@@ -15950,6 +15950,330 @@ body {
 .index-hero-section {
   background-color: #090B12 !important;
 }
+
+/* Cloned section from URL */
+/* ===== PRACTICE AREAS SECTION ===== */
+.bushari-practice-areas {
+  background: var(--background-color, #0a0a0a);
+  padding: 90px 20px;
+  direction: rtl;
+  font-family: system-ui, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background decoration */
+.bushari-practice-areas::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  left: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(26, 107, 204, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.bushari-practice-areas::after {
+  content: '';
+  position: absolute;
+  bottom: -150px;
+  right: -150px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(74, 42, 158, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+/* Container */
+.bushari-pa-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== HEADER ===== */
+.bushari-pa-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.bushari-pa-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent-color, #00C3EA);
+  background: rgba(0, 195, 234, 0.1);
+  border: 1px solid rgba(0, 195, 234, 0.25);
+  padding: 6px 18px;
+  border-radius: 50px;
+  margin-bottom: 18px;
+}
+
+.bushari-pa-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: var(--text-color, #F0F0F0);
+  margin: 0 0 18px 0;
+  line-height: 1.2;
+}
+
+.bushari-pa-subtitle {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: var(--text-secondary-color, #8C93A1);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ===== GRID ===== */
+.bushari-pa-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 50px;
+}
+
+/* ===== CARDS ===== */
+.bushari-pa-card {
+  background: var(--surface-color, #141414);
+  border: 1px solid rgba(26, 107, 204, 0.2);
+  border-radius: 16px;
+  padding: 36px 28px 30px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: default;
+}
+
+.bushari-pa-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(26, 107, 204, 0.18), 0 4px 16px rgba(0, 0, 0, 0.4);
+  border-color: rgba(26, 107, 204, 0.5);
+}
+
+/* Top accent line */
+.bushari-pa-card-accent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background: var(--gradient-primary, linear-gradient(90deg, #1861B9 0%, #1C72DA 100%));
+  border-radius: 16px 16px 0 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bushari-pa-card:hover .bushari-pa-card-accent {
+  opacity: 1;
+}
+
+/* Icon */
+.bushari-pa-card-icon {
+  width: 54px;
+  height: 54px;
+  background: rgba(26, 107, 204, 0.12);
+  border: 1px solid rgba(26, 107, 204, 0.25);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-color, #00C3EA);
+  transition: background 0.3s ease, border-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.bushari-pa-card-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.bushari-pa-card:hover .bushari-pa-card-icon {
+  background: rgba(26, 107, 204, 0.22);
+  border-color: rgba(0, 195, 234, 0.45);
+}
+
+/* Title */
+.bushari-pa-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-color, #F0F0F0);
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Description */
+.bushari-pa-card-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary-color, #8C93A1);
+  line-height: 1.75;
+  margin: 0;
+  flex: 1;
+}
+
+/* Link */
+.bushari-pa-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--primary-color, #1A6BCC);
+  text-decoration: none;
+  margin-top: 4px;
+  transition: color 0.25s ease, gap 0.25s ease;
+}
+
+.bushari-pa-card-link svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.25s ease;
+}
+
+.bushari-pa-card-link:hover {
+  color: var(--accent-color, #00C3EA);
+  gap: 12px;
+}
+
+.bushari-pa-card-link:hover svg {
+  transform: translateX(4px);
+}
+
+.bushari-pa-card-link:focus-visible {
+  outline: 2px solid var(--accent-color, #00C3EA);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ===== CTA BANNER ===== */
+.bushari-pa-cta {
+  background: linear-gradient(135deg, rgba(26, 107, 204, 0.15) 0%, rgba(74, 42, 158, 0.15) 100%);
+  border: 1px solid rgba(26, 107, 204, 0.3);
+  border-radius: 18px;
+  padding: 42px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bushari-pa-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(26, 107, 204, 0.05), transparent 60%);
+  pointer-events: none;
+}
+
+.bushari-pa-cta-content {
+  flex: 1;
+}
+
+.bushari-pa-cta-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-color, #F0F0F0);
+  margin: 0 0 8px 0;
+}
+
+.bushari-pa-cta-text {
+  font-size: 0.97rem;
+  color: var(--text-secondary-color, #8C93A1);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.bushari-pa-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 36px;
+  background: var(--gradient-primary, linear-gradient(90deg, #1861B9 0%, #1C72DA 100%));
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 50px;
+  white-space: nowrap;
+  transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 20px rgba(26, 107, 204, 0.35);
+  flex-shrink: 0;
+}
+
+.bushari-pa-cta-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(26, 107, 204, 0.5);
+}
+
+.bushari-pa-cta-btn:focus-visible {
+  outline: 2px solid var(--accent-color, #00C3EA);
+  outline-offset: 3px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .bushari-pa-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bushari-practice-areas {
+    padding: 60px 16px;
+  }
+
+  .bushari-pa-header {
+    margin-bottom: 40px;
+  }
+
+  .bushari-pa-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .bushari-pa-card {
+    padding: 28px 22px 24px;
+  }
+
+  .bushari-pa-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 24px;
+    gap: 20px;
+  }
+
+  .bushari-pa-cta-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .bushari-pa-title {
+    font-size: 1.6rem;
+  }
+
+  .bushari-pa-card-title {
+    font-size: 1.05rem;
+  }
+
+  .bushari-pa-cta-title {
+    font-size: 1.2rem;
+  }
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
