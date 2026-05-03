@@ -3449,7 +3449,7 @@ html[dir="rtl"] .footer-contact li > a { flex-direction: row !important; }
 .index-services-section {
   position: relative;
   overflow: visible;
-  background-color: #0a0a0a;
+  background-color: #090B12;
   background-image: none;
   color: var(--text-dark);
   padding: 120px 24px 90px;
@@ -15940,6 +15940,15 @@ body {
   background: linear-gradient(90deg, transparent, rgba(0,195,234,0.5) 20%, rgba(0,195,234,0.5) 80%, transparent) top / 100% 1px no-repeat,
     linear-gradient(90deg, transparent, rgba(74,42,158,0.3) 30%, rgba(74,42,158,0.3) 70%, transparent) bottom / 100% 1px no-repeat;
   z-index: 3;
+}
+
+.index-services-section {
+  background-color: #090B12 !important;
+  background-image: none !important;
+}
+
+.index-hero-section {
+  background-color: #090B12 !important;
 }
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
