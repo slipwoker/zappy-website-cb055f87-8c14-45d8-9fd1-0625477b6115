@@ -681,11 +681,37 @@
     <link rel="stylesheet" href="/styles.css">
 
     <style id="zappy-widget-visibility">
-      #mic-access-tool-general-button, .mic-access-tool-general-button,
-      #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
-      ._access-icon, #mic-access-tool-box, .mic-access-tool-box,
-      #mic-init-access-tool #mic-access-tool-box, div[id*="mic-access-tool-box"], ._access-menu {
-        display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;
+      html[dir="rtl"] .whatsapp-float { right: 20px !important; left: auto !important; }
+      html[dir="ltr"] .whatsapp-float, html:not([dir]) .whatsapp-float { left: 20px !important; right: auto !important; }
+      html[dir="rtl"] #mic-access-tool-general-button, html[dir="rtl"] .mic-access-tool-general-button,
+      html[dir="rtl"] #mic-init-access-tool .mic-access-tool-general-button,
+      html[dir="rtl"] #mic-init-access-tool #mic-access-tool-general-button,
+      html[dir="rtl"] ._access-icon { left: 20px !important; right: auto !important; }
+      html[dir="ltr"] #mic-access-tool-general-button, html[dir="ltr"] .mic-access-tool-general-button,
+      html[dir="ltr"] #mic-init-access-tool .mic-access-tool-general-button,
+      html[dir="ltr"] #mic-init-access-tool #mic-access-tool-general-button,
+      html[dir="ltr"] ._access-icon,
+      html:not([dir]) #mic-access-tool-general-button, html:not([dir]) .mic-access-tool-general-button,
+      html:not([dir]) #mic-init-access-tool .mic-access-tool-general-button,
+      html:not([dir]) #mic-init-access-tool #mic-access-tool-general-button,
+      html:not([dir]) ._access-icon { right: 20px !important; left: auto !important; }
+      @media (max-width: 768px) { .whatsapp-float { display: flex !important; } }
+      @media (min-width: 769px) { .whatsapp-float { display: flex !important; } }
+      @media (max-width: 768px) {
+        #mic-access-tool-general-button, .mic-access-tool-general-button,
+        #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
+        ._access-icon, #mic-access-tool-box, .mic-access-tool-box,
+        #mic-init-access-tool #mic-access-tool-box, div[id*="mic-access-tool-box"], ._access-menu {
+          display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;
+        }
+      }
+      @media (min-width: 769px) {
+        #mic-access-tool-general-button, .mic-access-tool-general-button,
+        #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
+        ._access-icon, #mic-access-tool-box, .mic-access-tool-box,
+        #mic-init-access-tool #mic-access-tool-box, div[id*="mic-access-tool-box"], ._access-menu {
+          display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;
+        }
       }
     </style>
 </head>
@@ -1176,7 +1202,7 @@
     <figure class="about-intro-portrait-col">
       <div class="about-intro-portrait-frame">
         <div class="about-intro-portrait-glow" aria-hidden="true"></div>
-        <img data-placeholder="about-intro-image-1" data-context="Professional cinematic portrait of Daniela, a confident Israeli female lawyer in her 30s-40s, wearing elegant dark professional attire, photographed in a premium law office setting with dramatic side lighting, dark moody background with subtle blue-cyan edge glow, sharp editorial quality, high contrast, sophisticated and authoritative expression, suitable for a premium legal website hero section" width="560" height="700" src="/assets/image-1777796715934-htcjp4.webp" alt="דניאלה בושארי, עורכת דין" class="about-intro-portrait-img" data-element-type="image" data-element-id="img-1777397243252-ecxzeo9po">
+        <img data-placeholder="about-intro-image-1" data-context="Professional cinematic portrait of Daniela, a confident Israeli female lawyer in her 30s-40s, wearing elegant dark professional attire, photographed in a premium law office setting with dramatic side lighting, dark moody background with subtle blue-cyan edge glow, sharp editorial quality, high contrast, sophisticated and authoritative expression, suitable for a premium legal website hero section" width="560" height="700" src="/assets/image-1777975292846-5u489o.webp" alt="דניאלה בושארי, עורכת דין" class="about-intro-portrait-img" data-element-type="image" data-element-id="img-1777397243252-ecxzeo9po">
         <div class="about-intro-portrait-overlay" aria-hidden="true"></div>
         <!-- Floating credential badge -->
         <div class="about-intro-badge">

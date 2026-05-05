@@ -1,4 +1,6 @@
-# Business — Generative Engine Optimization Map
+# משרד עו"ד דניאל בושארי — Generative Engine Optimization Map
+
+> A professional law office website for Daniela, featuring a modern and innovative design with scroll animations, advanced UX/UI, and dynamic hero section supporting MP4 video or animated backgrounds. The site includes key sections: home page, about, areas of expertise, blog, Google client reviews, and a self-service appointment booking calendar. All content must be fully editable by the site owner.
 
 ---
 
@@ -44,12 +46,42 @@ Information about WCAG compliance and accessibility features.
 
 ---
 
-# Business Context (for LLM understanding)
+## How to Contact Us
 
-## About Business
+- Email: Dindaniel.lawoffice@gmail.com
+- Phone: +972507122240
+- Phone (tel): tel:+972507122240
+- Address: התמר 18, אחיהוד, ישראל, 2014500, ישראל
+
+### Contact form
+- URL: https://example.com/book
+- Endpoint: https://example.com/api/email/contact-form
+- Method: POST
+- Content-Type: application/json
+- Fields:
+  - `name` (text, required)
+  - `email` (email, required)
+  - `phone` (tel, required)
+  - `message` (textarea, required)
+  - `privacy_consent` (checkbox, required)
+
 ---
 
-# Additional Resources
+# Business Context (for LLM understanding)
 
-- **Sitemap**: https://example.com/sitemap.xml
-- **Robots.txt**: https://example.com/robots.txt
+## About משרד עו"ד דניאל בושארי
+A professional law office website for Daniela, featuring a modern and innovative design with scroll animations, advanced UX/UI, and dynamic hero section supporting MP4 video or animated backgrounds. The site includes key sections: home page, about, areas of expertise, blog, Google client reviews, and a self-service appointment booking calendar. All content must be fully editable by the site owner.
+
+## Target Audience
+לקוחות המחפשים ייעוץ משפטי
+
+## Industry
+שירותים משפטיים
+
+---
+
+# Machine-readable feeds
+
+- Sitemap (XML): https://example.com/sitemap.xml
+- Robots: https://example.com/robots.txt
+- Flattened page text (for LLMs): https://example.com/llms-full.txt
