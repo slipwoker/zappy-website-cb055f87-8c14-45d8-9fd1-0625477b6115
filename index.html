@@ -1425,24 +1425,16 @@
     <!-- Bottom CTA -->
     <script>
 (function() {
-  function initCardClick() {
+  function initCardHover() {
     var cards = document.querySelectorAll('#zappy-section-1 .index-services-section__card');
     cards.forEach(function(card) {
-      card.addEventListener('click', function(e) {
-        // Don't toggle if clicking a real link inside the card (cta link)
-        if (e.target.closest('a') && !e.target.closest('.index-services-section__card-link')) return;
-        var isActive = card.classList.contains('card-active');
-        // Close all cards
-        cards.forEach(function(c) { c.classList.remove('card-active'); });
-        // Toggle clicked card
-        if (!isActive) { card.classList.add('card-active'); }
-      });
+      card.classList.remove('card-active');
     });
   }
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initCardClick);
+    document.addEventListener('DOMContentLoaded', initCardHover);
   } else {
-    initCardClick();
+    initCardHover();
   }
 })();
 </script>
