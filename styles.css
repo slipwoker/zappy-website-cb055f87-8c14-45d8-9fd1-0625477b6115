@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap');
 
 /* Self-hosted fonts (Inter + Rubik for multi-language support) */
@@ -16440,6 +16442,17 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Cormorant Garamond', sans-serif; font-wei
 .site-footer p {
   color: var(--background-color) !important;
 }
+
+:root {
+  --font-heading: 'FB Formula Narrow', 'Assistant', sans-serif;
+  --font-body: 'FB Formula Narrow', 'Assistant', sans-serif;
+}
+/* Font pairing applied */
+@import url('https://fonts.googleapis.com/css2?family=FB+Formula+Narrow:wght@700&display=swap');
+:root { --font-heading: 'FB Formula Narrow', sans-serif; --font-body: 'FB Formula Narrow', sans-serif; }
+body { font-family: 'FB Formula Narrow', sans-serif; font-weight: 400; }
+h1, h2, h3, h4, h5, h6 { font-family: 'FB Formula Narrow', sans-serif; font-weight: 700; }
+
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
