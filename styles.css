@@ -16180,6 +16180,28 @@ body {
 .nav-cta-btn { color: #FFFFFF !important; }
 /* === BUTTON TEXT OVERRIDES END === */
 
+
+.index-hero-section {
+  background-color: var(--text-color) !important;
+}
+
+.index-services-section {
+  background: var(--background-color) !important;
+}
+
+.index-reviews-section {
+  background: #EDECEA !important;
+}
+
+.index-booking-section {
+  background: var(--background-color) !important;
+}
+/* Font pairing applied */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Assistant:wght@400&display=swap');
+:root { --font-heading: 'Cormorant Garamond', sans-serif; --font-body: 'Assistant', sans-serif; }
+body { font-family: 'Assistant', sans-serif; font-weight: 400; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Cormorant Garamond', sans-serif; font-weight: 600; }
+
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
