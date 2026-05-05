@@ -16489,6 +16489,99 @@ html body blockquote {
 #zappy-section-1 .index-services-section__grid {
   gap: 16px !important;
 }
+
+#zappy-section-1 .index-services-section__card {
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: 160px !important;
+  height: 160px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  transition: height 0.4s ease, box-shadow 0.3s ease !important;
+}
+
+#zappy-section-1 .index-services-section__card:hover {
+  height: 300px !important;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.18) !important;
+}
+
+#zappy-section-1 .index-services-section__card-inner {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  padding: 20px !important;
+}
+
+#zappy-section-1 .index-services-section__card-title {
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  margin: 0 0 12px 0 !important;
+  transition: margin 0.3s ease !important;
+  z-index: 2 !important;
+  position: relative !important;
+}
+
+#zappy-section-1 .index-services-section__card-desc,
+#zappy-section-1 .index-services-section__card-inner p {
+  opacity: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  transition: opacity 0.35s ease 0.1s, max-height 0.35s ease !important;
+  margin: 0 !important;
+}
+
+#zappy-section-1 .index-services-section__card:hover .index-services-section__card-desc,
+#zappy-section-1 .index-services-section__card:hover .index-services-section__card-inner p {
+  opacity: 1 !important;
+  max-height: 200px !important;
+}
+
+#zappy-section-1 .index-services-section__card-cta {
+  opacity: 0 !important;
+  transition: opacity 0.35s ease 0.15s !important;
+}
+
+#zappy-section-1 .index-services-section__card:hover .index-services-section__card-cta {
+  opacity: 1 !important;
+}
+
+#zappy-section-1 .index-services-section__card-accent-line {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+#zappy-section-1 .index-services-section__grid {
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 14px !important;
+}
+
+@media (max-width: 1024px) {
+#zappy-section-1 .index-services-section__grid {
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+}
+
+@media (max-width: 768px) {
+#zappy-section-1 .index-services-section__grid {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+#zappy-section-1 .index-services-section__card {
+  height: auto !important;
+  min-height: 130px !important;
+}
+
+#zappy-section-1 .index-services-section__card:hover {
+  height: auto !important;
+}
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
