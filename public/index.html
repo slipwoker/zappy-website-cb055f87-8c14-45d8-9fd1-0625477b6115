@@ -1423,7 +1423,30 @@
     <!-- /Services Grid -->
 
     <!-- Bottom CTA -->
-    <div class="index-services-section__bottom-cta">
+    <script>
+(function() {
+  function initCardClick() {
+    var cards = document.querySelectorAll('#zappy-section-1 .index-services-section__card');
+    cards.forEach(function(card) {
+      card.addEventListener('click', function(e) {
+        // Don't toggle if clicking a real link inside the card (cta link)
+        if (e.target.closest('a') && !e.target.closest('.index-services-section__card-link')) return;
+        var isActive = card.classList.contains('card-active');
+        // Close all cards
+        cards.forEach(function(c) { c.classList.remove('card-active'); });
+        // Toggle clicked card
+        if (!isActive) { card.classList.add('card-active'); }
+      });
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCardClick);
+  } else {
+    initCardClick();
+  }
+})();
+</script>
+<div class="index-services-section__bottom-cta">
       <a href="/contact" class="btn-primary index-services-section__main-cta" data-element-type="button" data-element-id="btn-1777198392201-ppr1kq1m2" data-native-element="true" style="outline: none; border-color: transparent !important; color: rgb(255, 255, 255) !important; background-color: transparent !important; background-image: linear-gradient(135deg, rgb(2, 41, 49), rgb(0, 195, 234)) !important;">ליומן פגישות</a>
       
     </div>

@@ -16505,8 +16505,8 @@ html body blockquote {
 }
 
 #zappy-section-1 .index-services-section__card:hover {
-  height: 300px !important;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.18) !important;
+  height: auto !important;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.07) !important;
 }
 
 #zappy-section-1 .index-services-section__card-inner {
@@ -16539,8 +16539,8 @@ html body blockquote {
 
 #zappy-section-1 .index-services-section__card:hover .index-services-section__card-desc,
 #zappy-section-1 .index-services-section__card:hover .index-services-section__card-inner p {
-  opacity: 1 !important;
-  max-height: 200px !important;
+  opacity: 0 !important;
+  max-height: 0 !important;
 }
 
 #zappy-section-1 .index-services-section__card-cta {
@@ -16549,7 +16549,7 @@ html body blockquote {
 }
 
 #zappy-section-1 .index-services-section__card:hover .index-services-section__card-cta {
-  opacity: 1 !important;
+  opacity: 0 !important;
 }
 
 #zappy-section-1 .index-services-section__card-accent-line {
@@ -16581,6 +16581,40 @@ html body blockquote {
 #zappy-section-1 .index-services-section__card:hover {
   height: auto !important;
 }
+}
+
+#zappy-section-1 .index-services-section__card-bg-img {
+  display: none !important;
+}
+
+#zappy-section-1 .index-services-section__card-desc,
+#zappy-section-1 .index-services-section__card-inner p {
+  font-weight: 300 !important;
+  font-size: 0.88rem !important;
+}
+
+#zappy-section-1 .index-services-section__card:hover .index-services-section__card-desc,
+#zappy-section-1 .index-services-section__card:hover .index-services-section__card-inner p {
+  opacity: 0 !important;
+  max-height: 0 !important;
+}
+
+#zappy-section-1 .index-services-section__card:hover .index-services-section__card-cta {
+  opacity: 0 !important;
+}
+
+#zappy-section-1 .index-services-section__card.card-active .index-services-section__card-desc,
+#zappy-section-1 .index-services-section__card.card-active .index-services-section__card-inner p {
+  opacity: 1 !important;
+  max-height: 250px !important;
+}
+
+#zappy-section-1 .index-services-section__card.card-active .index-services-section__card-cta {
+  opacity: 1 !important;
+}
+
+#zappy-section-1 .index-services-section__card.card-active {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.18) !important;
 }
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
