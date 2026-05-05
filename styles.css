@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap');
@@ -16453,6 +16455,32 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Cormorant Garamond', sans-serif; font-wei
 body { font-family: 'FB Formula Narrow', sans-serif; font-weight: 400; }
 h1, h2, h3, h4, h5, h6 { font-family: 'FB Formula Narrow', sans-serif; font-weight: 700; }
 
+/* Font pairing applied */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
+:root { --font-heading: 'Rubik', sans-serif; --font-body: 'Rubik', sans-serif; }
+body { font-family: 'Rubik', sans-serif; font-weight: 400; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Rubik', sans-serif; font-weight: 700; }
+
+
+html body,
+html body *,
+html body h1,
+html body h2,
+html body h3,
+html body h4,
+html body h5,
+html body h6,
+html body p,
+html body a,
+html body span,
+html body li,
+html body button,
+html body input,
+html body textarea,
+html body label,
+html body blockquote {
+  font-family: 'Rubik', sans-serif !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
