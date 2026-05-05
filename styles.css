@@ -16481,6 +16481,14 @@ html body label,
 html body blockquote {
   font-family: 'Rubik', sans-serif !important;
 }
+
+#zappy-section-1 .index-services-section__card-inner {
+  padding: 24px !important;
+}
+
+#zappy-section-1 .index-services-section__grid {
+  gap: 16px !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
