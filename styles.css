@@ -16202,6 +16202,244 @@ body {
 body { font-family: 'Assistant', sans-serif; font-weight: 400; }
 h1, h2, h3, h4, h5, h6 { font-family: 'Cormorant Garamond', sans-serif; font-weight: 600; }
 
+
+#db-quote-portrait .db-quote-text,
+#db-quote-portrait .db-quote-author-name,
+#db-quote-portrait .db-quote-author-title,
+#db-quote-portrait .db-quote-mark-open,
+#db-quote-portrait .db-quote-mark-close,
+#db-quote-portrait p,
+#db-quote-portrait blockquote,
+#db-quote-portrait footer,
+#db-quote-portrait span {
+  color: var(--text-color) !important;
+}
+
+#db-quote-portrait .db-quote-texture {
+  opacity: 0 !important;
+}
+
+#zappy-section-1 .index-services-section__heading,
+#zappy-section-1 .index-services-section__intro p,
+#zappy-section-1 .index-services-section__intro b,
+#zappy-section-1 h2, #zappy-section-1 h3 {
+  color: var(--text-color) !important;
+}
+
+#zappy-section-1 .index-services-section__card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0,0,0,0.10) !important;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.07) !important;
+}
+
+#zappy-section-1 .index-services-section__card-bg-overlay {
+  background: rgba(255,255,255,0.90) !important;
+}
+
+#zappy-section-1 .index-services-section__card-title {
+  color: var(--text-color) !important;
+}
+
+#zappy-section-1 .index-services-section__card-desc,
+#zappy-section-1 .index-services-section__card-desc p,
+#zappy-section-1 .index-services-section__card-inner p {
+  color: var(--secondary-color) !important;
+}
+
+#zappy-section-1 .index-services-section__card-cta {
+  color: var(--accent-color) !important;
+}
+
+#zappy-section-1 .index-services-section__card-accent-line {
+  background: var(--accent-color) !important;
+}
+
+#zappy-section-1 .index-services-section__orb,
+#zappy-section-1 .index-services-section__bg-texture {
+  opacity: 0 !important;
+}
+
+#zappy-section-1 .index-services-section__main-cta,
+#zappy-section-1 .btn-primary {
+  background: var(--text-color) !important;
+  color: var(--background-color) !important;
+  border: none !important;
+}
+
+#zappy-section-1 .index-services-section__card-glow {
+  opacity: 0 !important;
+}
+
+#zappy-section-2 .reviews-title,
+#zappy-section-2 .reviews-subtitle,
+#zappy-section-2 h2 {
+  color: var(--text-color) !important;
+}
+
+#zappy-section-2 .review-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06) !important;
+}
+
+#zappy-section-2 .review-text,
+#zappy-section-2 .review-name,
+#zappy-section-2 .review-meta {
+  color: var(--text-color) !important;
+}
+
+#zappy-section-2 .review-quote-mark {
+  color: var(--accent-color) !important;
+}
+
+#zappy-section-2 .review-card--accent {
+  background: var(--text-color) !important;
+}
+
+#zappy-section-2 .review-card--accent .review-text,
+#zappy-section-2 .review-card--accent .review-name,
+#zappy-section-2 .review-card--accent .review-meta,
+#zappy-section-2 .review-card--accent .review-quote-mark {
+  color: var(--background-color) !important;
+}
+
+#zappy-section-2 .trust-score-number,
+#zappy-section-2 .trust-score-label,
+#zappy-section-2 .trust-point-content strong,
+#zappy-section-2 .trust-point-content span {
+  color: var(--text-color) !important;
+}
+
+#zappy-section-2 .google-badge-inner,
+#zappy-section-2 .reviews-google-badge {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+}
+
+#zappy-section-2 .google-badge-title,
+#zappy-section-2 .google-badge-score {
+  color: var(--text-color) !important;
+}
+
+#zappy-section-2 .trust-cta-btn {
+  background: var(--text-color) !important;
+  color: var(--background-color) !important;
+  border-color: var(--text-color) !important;
+}
+
+#zappy-section-3 .index-booking-section__heading,
+#zappy-section-3 .index-booking-section__lead,
+#zappy-section-3 .index-booking-section__step-title,
+#zappy-section-3 .index-booking-section__step-desc,
+#zappy-section-3 h2, #zappy-section-3 h3, #zappy-section-3 p {
+  color: var(--text-color) !important;
+}
+
+#zappy-section-3 .index-booking-section__bg-pattern,
+#zappy-section-3 .index-booking-section__glow-orb {
+  opacity: 0 !important;
+}
+
+#zappy-section-3 .index-booking-section__preview-card,
+#zappy-section-3 .card-glassmorphism {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0,0,0,0.10) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+  backdrop-filter: none !important;
+}
+
+#zappy-section-3 .index-booking-section__cta {
+  background: var(--text-color) !important;
+  color: var(--background-color) !important;
+  border: none !important;
+}
+
+#zappy-section-3 .index-booking-section__step-icon {
+  background: rgba(138,115,85,0.12) !important;
+  color: var(--accent-color) !important;
+}
+
+#zappy-section-3 .index-booking-section__step-icon svg {
+  stroke: var(--accent-color) !important;
+}
+
+#zappy-section-3 .index-booking-section__cal-header,
+#zappy-section-3 .index-booking-section__cal-logo,
+#zappy-section-3 .zappy-cal-days-row span {
+  color: var(--text-color) !important;
+}
+
+#zappy-section-3 .index-booking-section__trust-badge {
+  color: var(--text-secondary-color) !important;
+}
+
+.site-footer {
+  background: var(--text-color) !important;
+}
+
+.site-footer .footer-tagline,
+.site-footer .footer-heading,
+.site-footer p,
+.site-footer span,
+.site-footer li,
+.site-footer a,
+.site-footer h4 {
+  color: var(--background-color) !important;
+}
+
+.site-footer .footer-cta-btn {
+  background: var(--accent-color) !important;
+  color: #FFFFFF !important;
+  border-color: var(--accent-color) !important;
+}
+
+.site-footer .footer-social a i {
+  color: var(--background-color) !important;
+}
+
+.site-footer .footer-social a {
+  color: var(--background-color) !important;
+}
+
+.site-footer span {
+  color: var(--background-color) !important;
+}
+
+.site-footer li {
+  color: var(--background-color) !important;
+}
+
+.site-footer a {
+  color: var(--background-color) !important;
+}
+
+.site-footer h1 {
+  color: var(--background-color) !important;
+}
+
+.site-footer h2 {
+  color: var(--background-color) !important;
+}
+
+.site-footer h3 {
+  color: var(--background-color) !important;
+}
+
+.site-footer h4 {
+  color: var(--background-color) !important;
+}
+
+.site-footer h5 {
+  color: var(--background-color) !important;
+}
+
+.site-footer h6 {
+  color: var(--background-color) !important;
+}
+
+.site-footer p {
+  color: var(--background-color) !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
